@@ -33,7 +33,7 @@ class Location(db.Model):
     __tablename__ = "locations"
 
     case_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), autoincrement=True,  primary_key=True)
-    state = db.Column(db.String(2), nullable=False)
+    state = db.Column(db.String(2), nullable=False, unique=True)
     city = db.Column(db.String(50), nullable=False)
     county = db.Column(db.String(50), nullable=True)
 
@@ -56,7 +56,7 @@ class Picture(db.Model):
     __tablename__ = "pictures"
 
     picture_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    pic_state = db.Column(db.String(2), db.ForeignKey('location.state') nullable=False)
+    pic_state = db.Column(db.String(2), db.ForeignKey('locations.state'), nullable=False)
     picture_path = db.Column(db.String(200), nullable=False)
 
     # location = backref a list of case locations.

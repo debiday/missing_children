@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from model import db, connect_to_db, Children
+from model import db, connect_to_db
 
 app = Flask(__name__)
 
@@ -9,6 +9,8 @@ def show_homepage():
     """Show the application's homepage."""
 
     return render_template("homepage.html")
+
+
 
 
 if __name__ == "__main__":
