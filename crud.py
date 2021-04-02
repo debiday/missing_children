@@ -4,7 +4,7 @@
 
 """Making it easier to access data from DB?"""
 
-from model import db, Child, Location, Picture, connect_to_db
+from model import db, Child, Location, connect_to_db
 
 #for early stage small db testing- one state
 def get_children():
