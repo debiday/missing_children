@@ -1,8 +1,11 @@
 """Models for children database"""
 
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 
 db = SQLAlchemy()
+
+
 
 class Child(db.Model):
     """A list of children."""
@@ -14,7 +17,24 @@ class Child(db.Model):
     lname = db.Column(db.String(50), nullable=True)
     ethnicity = db.Column(db.String(50), nullable=True)
     age_missing = db.Column(db.Integer, nullable=False)
-    current_age = db.Column(db.Integer, nullable= True)
+    # current_age = db.Column(db.Integer, nullable= True)
+    
+    #Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
+
+    def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, sex, ethnicity, date_modified):
+        self.fname = fname
+        self.lname = lname
+        self.ethnicity = ethnicity
+        self.age_missing = age_missing
+        # self.city = city
+        # self.county = county
+        # self.state = state
+        # self.sex = sex
+        # self.ethnicity = ethnicity
+        # self.date_modified = date_modified
+
+        # self.current_age = (current_date - dlc) + age_missing
+        # TODO calculate the child's current age
     
     #Setting up SQLAlchemy relationship between children and locations
     locations = db.relationship('Location', backref = 'children')
@@ -75,6 +95,7 @@ def connect_to_db(app):
 
     # Configure to use our PostgreSQL database
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///children'
+    #postgresql setting database as name "children"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
