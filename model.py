@@ -54,7 +54,7 @@ class Location(db.Model):
     __tablename__ = "locations"
 
     case_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), autoincrement=True,  primary_key=True)
-    state = db.Column(db.String(2), nullable=False, unique=False)
+    state = db.Column(db.String(2), nullable=False)
     city = db.Column(db.String(50), nullable=False)
     county = db.Column(db.String(50), nullable=True)
 
@@ -63,6 +63,7 @@ class Location(db.Model):
     # pictures = db.relationship('Picture', backref = 'locations')
 
     def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, sex, ethnicity):
+    # def __init__(case_id, city, county, state):
         self.case_id = case_id
         self.state = state
         self.city = city

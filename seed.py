@@ -28,6 +28,7 @@ def get_children():
             r1, r2, r3, r4, r5, r6, r7, r8, r9, r10 = lst
 
             db.session.add(Child(r1, r2, r3, r4, float(r5), r6, r7, r8, r9, r10))
+            # db.session.add(Location(int(r1), r6, r7, r8)
             db.session.add(Location(int(r1), r2, r3, r4, float(r5), r6, r7, r8, r9, r10))
 
     db.session.commit()
