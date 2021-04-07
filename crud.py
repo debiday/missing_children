@@ -4,9 +4,12 @@
 
 """Making it easier to access data from DB?"""
 
+
+# for early stage small db testing- one state
+
+
 from model import db, Child, Location, connect_to_db
 
-#for early stage small db testing- one state
 def get_children():
     """Return all children."""
 
@@ -21,9 +24,15 @@ def get_child_by_id(child_id):
 
 def get_children_by_state(state):
     """Return number of children by state."""
-    
 
-    return Children.query.filter(location.state == state).all()
+    return Location.query.filter(Location.state == 'state').all()
+
+
+def get_children_by_age(age_missing):
+    """Return children by missing age."""
+
+    return Child.query.filter_by(age_missing=1).all()
+
 
 if __name__ == '__main__':
     from server import app

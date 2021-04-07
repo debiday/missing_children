@@ -17,5 +17,35 @@ style: 'mapbox://styles/debiday/ckn6qdpl805k517kicfhzmyoo'
 </script>
 </div>
 
-<p>The total number of children missing in {} is {}.</p>
+<!-- <p>Find the number of children who were missing the year ________. </p> -->
+
+<form><h3>
+    <label>Missing children based on your age in 2021:</label>
+    <textarea name="my-age"></textarea>
+</h3></form>
+<div class="same-age_children"><p>The children who are the same age as you in the year 2021 are:</p></div>
+<div class="box"></div>
+
+
+<form><h3>
+    Find the number of children who were reported missing in the year ________. 
+    <select name="year">
+        <option value="2020">2020</option>
+        <option value="2020">2019</option>
+        <option value="2020">2018</option>
+        <option value="2020">2017</option>
+        <option value="2020">2016</option>
+        <option value="2020">2015</option>
+        <option value="2020">2014</option>
+        <option value="2020">2013</option>
+        <option value="2020">2012</option>
+        <option value="2020">2011</option>
+        <option value="2020">2010</option>
+        <option value="2020">2009</option>
+        <option value="2020">2008</option>
+        <option value="2020">2007</option>
+    </select></h3>
+</form>
+<p><h8>Based on NAMUS database launched in 2007.</h8></p>
+<h10>Data accessed April 2021</h10>
 {% endblock %}

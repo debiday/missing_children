@@ -22,7 +22,7 @@ class Child(db.Model):
     #Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
 
 
-    def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, sex, ethnicity):
+    def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, gender, ethnicity):
         self.fname = fname
         self.lname = lname
         self.ethnicity = ethnicity
@@ -30,7 +30,7 @@ class Child(db.Model):
         # self.city = city
         # self.county = county
         # self.state = state
-        # self.sex = sex
+        # self.gender = gender
         # self.ethnicity = ethnicity
         # self.date_modified = date_modified
 
