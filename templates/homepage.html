@@ -1,2 +1,21 @@
-<p>The total number of children missing in {} is {}</p>
+{% extends 'base.html' %}
 
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div class="map">
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGViaWRheSIsImEiOiJja20zN3V5bXAwMDk0MnFwOTgweDh2bXY3In0.1mhCDfhwLfdgQV3kwTSSAw';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/debiday/ckn6qdpl805k517kicfhzmyoo'
+});
+</script>
+</div>
+
+<p>The total number of children missing in {} is {}.</p>
+{% endblock %}
