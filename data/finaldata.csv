@@ -1,5 +1,4 @@
-﻿case_num,age_2021,date_missing,lname,fname,missing_age,city,county,state,gender,ethnicity,lat,long
-1,17,4/1/21,Caldera,Katele,17,Springdale,Washington,AR,Female,White/Caucasian,36.16722,-94.240112
+﻿1,17,4/1/21,Caldera,Katele,17,Springdale,Washington,AR,Female,White/Caucasian,36.16722,-94.240112
 2,16,3/30/21,Prado,Azlin,16,Del City,Oklahoma,OK,Female,White/Caucasian,35.27672,-99.13508
 3,16,3/30/21,Lopez-Ramirez,Vivian,16,Springdale,Washington,AR,Female,Hispanic/Latino,36.16722,-94.240112
 4,17,3/26/21,Brown,Abigail,17,Brooklyn,Kings,NY,Female,Black/AfricanAmerican,40.645099,-73.945032
@@ -399,7 +398,7 @@
 398,17,4/20/20,Uwagwu,Uche,16,Euless,Tarrant,TX,Female,Black/AfricanAmerican,32.859305,-97.075688
 399,15,4/20/20,Taylor,Devin,14,Dawsonville,Dawson,GA,Male,Black/AfricanAmerican,34.453661,-84.155043
 400,18,4/19/20,McGinn,Misty,17,Rice,Navarro,TX,Female,White/Caucasian,32.24376,-96.4986
-401,17,4/19/20,"Haszleton, Jr.",Anthony,16,Decatur,DeKalb,GA,Male,Black/AfricanAmerican,33.772554,-84.291723
+401,17,4/19/20,Haszleton  Jr.,Anthony,16,Decatur,DeKalb,GA,Male,Black/AfricanAmerican,33.772554,-84.291723
 402,17,4/18/20,Caiel Par,Mario,16,New York,New York,NY,Male,Hispanic/Latino,40.750422,-73.996328
 403,16,4/17/20,Ashley,Brianna,15,Claremore,Rogers,OK,Female,White/Caucasian,36.348616,-95.604344
 404,16,4/17/20,Stewart,Devonte,15,Morrisania,Bronx,NY,Male,Black/AfricanAmerican,40.829267,-73.906525
@@ -796,7 +795,7 @@
 795,19,3/13/19,Ingram,Carmika,17,Murfreesboro,Rutherford,TN,Female,Black/AfricanAmerican,35.762951,-86.372158
 796,19,3/13/19,Rodriguez,Theodore,17,Tulsa,Tulsa,OK,Male,Black/AfricanAmerican,36.039147,-95.868667
 797,19,3/12/19,Mendez,Jose,17,Chattanooga,Hamilton,TN,Male,Hispanic/Latino,35.017818,-85.206426
-798,3,3/9/19,Robertson,Amiah,1,"Indianapolis,",Marshall,IN,Female,White/Caucasian,39.775092,-86.13216
+798,3,3/9/19,Robertson,Amiah,1,Indianapolis,Marshall,IN,Female,White/Caucasian,39.775092,-86.13216
 799,10,3/6/19,McIntosh,Noah,8,Corona,Riverside,CA,Male,White/Caucasian,33.752886,-116.055617
 800,19,2/28/19,Torres,Ismeralda,17,Dallas,Dallas,TX,Female,Hispanic/Latino,32.781179,-96.790329
 801,18,2/27/19,Rodriguez Rodriguez,Jorge,16,Miami,Miami-Dade,FL,Male,White/Caucasian/Hispanic/Latino,25.558428,-80.458168
@@ -903,7 +902,7 @@
 902,20,9/10/18,Lopez,Alba,17,White Plains,Westchester,NY,Female,White/Caucasian,41.031397,-73.769626
 903,19,9/9/18,Christley,Maya,16,Memphis,Shelby,TN,Female,Black/AfricanAmerican,35.169255,-89.990415
 904,20,9/7/18,Boyd,Keonna,17,Kansas City,Wyandotte,KS,Female,Black/AfricanAmerican,39.103053,-94.630384
-905,20,9/6/18,Mummer,James,17,"La Crosse, WI",La Crosse,WI,Male,White/Caucasian,43.806197,-91.140529
+905,20,9/6/18,Mummer,James,17,"La Crosse",La Crosse,WI,Male,White/Caucasian,43.806197,-91.140529
 906,18,9/2/18,Manigault,John,15,Jacksonville,Duval,FL,Male,Black/AfricanAmerican,30.337538,-81.768622
 907,20,8/31/18,Revolorio,Elmer,17,Murfreesboro,Rutherford,TN,Male,White/Caucasian,35.762951,-86.372158
 908,18,8/28/18,Miller,Trinity,15,Tulsa,Tulsa,OK,Female,White/Caucasian,36.039147,-95.868667
@@ -1734,7 +1733,7 @@
 1733,11,2/4/11,Davis,Joshua,1,New Braunfels,Comal,TX,Male,Black/AfricanAmerican,29.696878,-98.070726
 1734,23,2/1/11,Wu,Sifeng,13,Lyndhurst,Bergen,NJ,Female,Asian,40.799549,-74.116517
 1735,13,1/26/11,Rink,Andres,3,San Antonio,Bexar,TX,Male,White/Caucasian/Hispanic/Latino,29.468413,-98.528889
-1736,13,1/18/11,Makielski-Rivera,Gabriel,3,"Culpepper,",Culpeper,VA,Male,White/Caucasian/Hispanic/Latino,38.511694,-77.9928
+1736,13,1/18/11,Makielski-Rivera,Gabriel,3,Culpepper,Culpeper,VA,Male,White/Caucasian/Hispanic/Latino,38.511694,-77.9928
 1737,18,1/18/11,Makielski-Rivera,Isabel,8,Culpepper,Culpeper,VA,Female,White/Caucasian/Hispanic/Latino,38.511694,-77.9928
 1738,14,1/15/11,Nimri,Natalie,4,Utica,Oneida,NY,Female,White/Caucasian,43.077369,-75.233208
 1739,15,1/11/11,Bibiano,Cesar,5,Los Angeles,Los Angeles,CA,Male,Hispanic/Latino,33.973951,-118.248405
@@ -2292,7 +2291,7 @@
 2291,31,10/14/02,Seefeldt,Kathrynn,12,Independence,Jackson,MO,Female,White/Caucasian,39.107798,-94.409828
 2292,22,10/9/02,Schladweiler,Tyler,3,Lake Havasu City,Mohave,AZ,Male,White/Caucasian,34.48025,-114.348519
 2293,23,9/29/02,Bennett,Kynande,4,Conway,Horry,SC,Female,Black/AfricanAmerican,33.868775,-78.948287
-2294,34,9/9/02,"Bell, III",Leon,15,Grand Prairie,Dallas,TX,Male,Black/AfricanAmerican,32.776671,-97.009389
+2294,34,9/9/02,Bell  III,Leon,15,Grand Prairie,Dallas,TX,Male,Black/AfricanAmerican,32.776671,-97.009389
 2295,23,9/1/02,Rettew,Thomas,4,Salem,Fulton,AR,Male,White/Caucasian,36.322566,-91.957651
 2296,20,8/14/02,Arnett,Jersey,1,St. Ignace,Mackinac,MI,Female,White/Caucasian,45.99852,-84.697818
 2297,37,8/1/02,Newville,Daniel,18,New London,Kandiyohi,MN,Male,White/Caucasian,45.30108,-94.94418
@@ -2379,7 +2378,7 @@
 2378,34,3/29/01,Martinez,Veronica,14,Tracy,San Joaquin,CA,Female,Hispanic/Latino,37.737191,-121.433384
 2379,37,3/24/01,Lake,Adam,17,Hilliard,Franklin,OH,Male,White/Caucasian,40.0334,-83.15825
 2380,31,3/4/01,Markowski,Bethany,11,Jackson,Madison,TN,Female,White/Caucasian,35.570424,-88.862742
-2381,32,2/15/01,"Kraft, Jr.",Steven,12,Benton Harbor,Berrien,MI,Male,White/Caucasian,42.14338,-86.348568
+2381,32,2/15/01,Kraft  Jr.,Steven,12,Benton Harbor,Berrien,MI,Male,White/Caucasian,42.14338,-86.348568
 2382,37,2/10/01,Aponte-Soto,Yeritza,17,Juana Diaz,,PR,Female,Hispanic/Latino,17.997367,-66.493218
 2383,22,2/3/01,Kibalo,Samantha,2,Suffern,Rockland,NY,Female,White/Caucasian,41.137295,-74.105737
 2384,35,2/3/01,Sinclair,Bethany,15,West Chesterfield,Cheshire,NH,Female,White/Caucasian,42.90425,-72.51564
@@ -2754,7 +2753,7 @@
 2753,45,7/5/93,Silverman,Aron,17,Norfolk,Norfolk,VA,Male,White/Caucasian,36.895911,-76.208521
 2754,39,6/28/93,North,Jeanna,11,Fargo,Cass,ND,Female,White/Caucasian,46.927094,-96.834703
 2755,46,6/20/93,Norfleet,Sarah,18,Bountiful,Davis,UT,Female,Asian,40.874038,-111.870994
-2756,38,5/24/93,"Burdynski, Jr.",George,10,Brentwood,Prince George's,MD,Male,White/Caucasian,38.94317,-76.95664
+2756,38,5/24/93,Burdynski  Jr.,George,10,Brentwood,Prince George's,MD,Male,White/Caucasian,38.94317,-76.95664
 2757,42,5/23/93,Pitcher,Danielle,14,Sunizona,Cochise,AZ,Female,White/Caucasian,31.882033,-109.653399
 2758,46,5/18/93,Tavakol,Sam,18,Sherman Oaks,Los Angeles,CA,Male,Other,34.147149,-118.463365
 2759,45,5/10/93,Robinson,Trinity,17,Homestead,Miami-Dade,FL,Female,White/Caucasian,25.526889,-80.499812
@@ -2787,7 +2786,7 @@
 2786,36,9/15/92,Olmstead,Angela,7,Bella Vista,Shasta,CA,Female,White/Caucasian,40.715565,-122.11939
 2787,45,8/28/92,Sheldon,Harry,16,Kotzebue,Northwest Arctic,AK,Male,AmericanIndian/AlaskaNative,66.865256,-161.780844
 2788,42,8/27/92,Occhi,Leigh,13,Tupelo,Lee,MS,Female,White/Caucasian,34.221257,-88.775002
-2789,46,8/24/92,"Brooks, Jr.",William,17,Frederick,Frederick,MD,Male,Black/AfricanAmerican,39.443551,-77.33294
+2789,46,8/24/92,Brooks  Jr.,William,17,Frederick,Frederick,MD,Male,Black/AfricanAmerican,39.443551,-77.33294
 2790,43,8/12/92,Pickett,Tracy,14,Webb City,Jasper,MO,Female,White/Caucasian,37.14645,-94.463
 2791,45,7/30/92,Martinez,Sergio,16,Las Cruces,,NM,Male,White/Caucasian/Hispanic/Latino,32.290052,-106.753893
 2792,37,7/27/92,Echols,Scott,8,San Bernardino,San Bernardino,CA,Male,White/Caucasian,34.104794,-117.29215
@@ -2929,7 +2928,7 @@
 2928,43,6/16/89,Wetzel,Tara,11,Soldotna,Kenai Peninsula,AK,Female,White/Caucasian,60.48778,-151.05833
 2929,44,6/16/89,Gerlitz,Janelle,12,Soldotna,Kenai Peninsula,AK,Female,White/Caucasian,60.48778,-151.05833
 2930,34,6/12/89,Moya,Anthony,2,Denver,Denver,CO,Male,Hispanic/Latino,39.760189,-104.996553
-2931,49,6/1/89,"Baker, Jr",Lindsey,17,Hiddenite,Alexander,NC,Male,White/Caucasian,35.90374,-81.09064
+2931,49,6/1/89,Baker  Jr,Lindsey,17,Hiddenite,Alexander,NC,Male,White/Caucasian,35.90374,-81.09064
 2932,46,5/27/89,Cooke,Jay,14,Homer,Kenai Peninsula,AK,Male,Black/AfricanAmerican,59.6425,-151.54833
 2933,47,5/26/89,Benetton,Soni,15,Fontana,San Bernardino,CA,Male,White/Caucasian,34.103288,-117.4363
 2934,44,5/20/89,Norwood,Kimberly,12,Hallsville,Harrison,TX,Female,White/Caucasian,32.526928,-94.573183
@@ -2981,7 +2980,7 @@
 2980,34,3/6/88,McGuinn,Melissa,1,Trenton,Mercer,NJ,Female,White/Caucasian,40.280531,-74.712018
 2981,49,2/27/88,Rawls,Samuel,16,San Antonio,Bexar,TX,Male,White/Caucasian,29.468413,-98.528889
 2982,45,2/12/88,Phillips,Shaliegh,12,San Diego,San Diego,CA,Female,White/Caucasian,32.724103,-117.170912
-2983,51,2/11/88,"Bogart, Jr.",Arden,18,Santa Fe,Santa Fe,NM,Male,White/Caucasian,35.697473,-105.982146
+2983,51,2/11/88,Bogart  Jr.,Arden,18,Santa Fe,Santa Fe,NM,Male,White/Caucasian,35.697473,-105.982146
 2984,45,2/11/88,Li,Jie,12,Honolulu,Honolulu,HI,Female,Asian,24.859832,-168.021815
 2985,44,1/20/88,Betz,Patrick,11,Upland,San Bernardino,CA,Male,White/Caucasian,34.141146,-117.655583
 2986,51,1/18/88,Catarra,Luciano,18,Brooklyn,Kings,NY,Male,White/Caucasian,40.645099,-73.945032
@@ -3015,7 +3014,7 @@
 3014,50,6/4/87,Felton,Wendy,16,Marion,Grant,IN,Female,White/Caucasian,40.599427,-85.629225
 3015,46,5/8/87,Downey,William,12,Seattle,King,WA,Male,White/Caucasian,47.432251,-121.803388
 3016,49,4/26/87,Markovich,Alicia,15,Blairsville,Indiana,PA,Female,White/Caucasian,40.486445,-79.195766
-3017,52,4/21/87,"Kochergin, Jr",Anton,18,Dutch Harbor,Aleutians West,AK,Male,AmericanIndian/AlaskaNative,53.885808,-166.538324
+3017,52,4/21/87,Kochergin  Jr,Anton,18,Dutch Harbor,Aleutians West,AK,Male,AmericanIndian/AlaskaNative,53.885808,-166.538324
 3018,38,4/16/87,Childress,Marlena,4,Union City,Obion,TN,Female,White/Caucasian,36.42886,-89.113506
 3019,50,4/15/87,Owens,Alexis,16,Port Orchard,King,WA,Female,White/Caucasian,47.542664,-122.587102
 3020,51,4/15/87,Green,Martha,17,White Bluff,Dickson,TN,Female,White/Caucasian,36.124378,-87.226354
@@ -3117,7 +3116,7 @@
 3116,46,7/16/85,Brown,Sheketah,10,Port Saint Lucie,St. Lucie,FL,Female,Black/AfricanAmerican,27.312492,-80.313322
 3117,47,7/14/85,Gandara,Angelica,11,Temple,Bell,TX,Female,Hispanic/Latino,31.068306,-97.3047
 3118,46,6/30/85,Shuglie,Marisa,10,Somerset,Somerset,PA,Female,White/Caucasian,39.990045,-79.08745
-3119,51,6/28/85,"Densmore, Jr",David,15,Kodiak,Kodiak Island,AK,Male,White/Caucasian,57.613209,-153.403556
+3119,51,6/28/85,Densmore  Jr,David,15,Kodiak,Kodiak Island,AK,Male,White/Caucasian,57.613209,-153.403556
 3120,40,6/25/85,Huger,Jeremiah,4,Bronx,Bronx,NY,Male,Black/AfricanAmerican,40.863028,-73.799802
 3121,49,6/18/85,Robbins,Diane,13,Richland,Benton,WA,Female,White/Caucasian,46.28569,-119.28446
 3122,53,6/17/85,Perry,Cynthia,17,Raleigh,Wake,NC,Female,White/Caucasian,35.773632,-78.634457
@@ -3183,7 +3182,7 @@
 3182,39,5/17/84,Evans,Sean,2,Watertown,Jefferson,NY,Male,White/Caucasian,43.968892,-75.906501
 3183,52,5/16/84,Rothganger,Tammy,15,Eldon,Miller,MO,Female,White/Caucasian,38.320057,-92.478035
 3184,55,5/11/84,Kingston,Donna,18,Tahlequah,Cherokee,OK,Female,AmericanIndian/AlaskaNative,35.911304,-94.911331
-3185,54,3/29/84,"Fernandez, Jr.",Nicasio,17,Montclair,San Bernardino,CA,Male,Hispanic/Latino,34.07751,-117.68978
+3185,54,3/29/84,Fernandez  Jr.,Nicasio,17,Montclair,San Bernardino,CA,Male,Hispanic/Latino,34.07751,-117.68978
 3186,52,3/23/84,Cordes,William,15,Auburn,Placer,CA,Male,White/Caucasian,39.014933,-121.07047
 3187,55,3/22/84,Powell,Richard,18,Fort Worth,Tarrant,TX,Male,White/Caucasian,32.771419,-97.291484
 3188,54,3/10/84,Lupercio,Richardo,17,San Francisco,San Francisco,CA,Male,White/Caucasian,37.776646,-122.417481
@@ -3455,7 +3454,7 @@
 3454,58,6/1/78,Adams,Linda,15,Yakima,Yakima,WA,Female,White/Caucasian,46.722625,-120.406039
 3455,57,5/30/78,Wyant,Cheryl,14,San Bernardino,San Bernardino,CA,Female,White/Caucasian,34.104794,-117.29215
 3456,57,5/11/78,Gould,Bertha,14,Morgan City,St. Mary,LA,Female,White/Caucasian,29.697653,-91.265374
-3457,61,5/6/78,"Hamilton, Jr",William,18,Prince of Wales,Prince of Wales-Outer Ketchikan,AK,Male,AmericanIndian/AlaskaNative,65.60917,-168.0875
+3457,61,5/6/78,Hamilton  Jr,William,18,Prince of Wales,Prince of Wales-Outer Ketchikan,AK,Male,AmericanIndian/AlaskaNative,65.60917,-168.0875
 3458,52,4/30/78,Vigil,Christopher,9,Poudre Park,Larimer,CO,Male,White/Caucasian,40.594597,-105.127416
 3459,55,4/16/78,Ellinwood,Ann,12,Corvallis,Benton,OR,Female,White/Caucasian,44.639931,-123.275969
 3460,59,3/2/78,Rodermund,Mary,16,Morgan City,St. Mary,LA,Female,White/Caucasian,29.697653,-91.265374
@@ -3570,14 +3569,14 @@
 3569,64,12/23/74,Trlica,Mary,17,Fort Worth,Tarrant,TX,Female,White/Caucasian,32.771419,-97.291484
 3570,56,12/23/74,Moseley,Julie,9,Fort Worth,Tarrant,TX,Female,White/Caucasian,32.771419,-97.291484
 3571,61,12/23/74,Wilson,Lisa,14,Fort Worth,Tarrant,TX,Female,White/Caucasian,32.771419,-97.291484
-3572,65,12/10/74,"Inga, Jr.",Alex,18,Kodiak,Kodiak Island,AK,Male,AmericanIndian/AlaskaNative,57.613209,-153.403556
+3572,65,12/10/74,Inga  Jr.,Alex,18,Kodiak,Kodiak Island,AK,Male,AmericanIndian/AlaskaNative,57.613209,-153.403556
 3573,64,12/4/74,Maynard,Ila,17,Greensboro,Guilford,NC,Female,Black/AfricanAmerican,36.069144,-79.765156
 3574,64,12/4/74,Partridge,Laurie,17,Spokane,Spokane,WA,Female,White/Caucasian,47.66264,-117.435997
 3575,51,11/10/74,Johnson,Sheri,4,Independence,Jackson,MO,Female,White/Caucasian,39.107798,-94.409828
 3576,48,11/10/74,Johnson,Michael,1,Independence,Jackson,MO,Male,White/Caucasian,39.107798,-94.409828
 3577,50,11/7/74,Wurst,Caren,3,Plantaton,Broward,FL,Female,White/Caucasian,28.45743,-82.409148
 3578,60,11/1/74,White,Lisa,13,Vernon,Tolland,CT,Female,White/Caucasian,41.81871,-72.47953
-3579,63,10/30/74,"Talmon, Jr.",Duane,16,Buffalo,Erie,NY,Male,White/Caucasian,42.89606,-78.886424
+3579,63,10/30/74,Talmon  Jr.,Duane,16,Buffalo,Erie,NY,Male,White/Caucasian,42.89606,-78.886424
 3580,63,10/2/74,Wilcox,Nancy,16,Holliday,Salt Lake,UT,Female,White/Caucasian,40.668836,-111.824656
 3581,64,9/22/74,Bachelder,Mark,17,Freeport,Brazoria,TX,Male,White/Caucasian,29.021218,-95.278251
 3582,48,9/9/74,Hurtado,Joseph,1,El Paso,El Paso,TX,Male,Hispanic/Latino,31.763608,-106.484592
@@ -3646,7 +3645,7 @@
 3645,65,5/30/73,Bowers,Victoria,17,Deltona,Volusia,FL,Female,White/Caucasian,28.900274,-81.245074
 3646,54,4/27/73,Davenport,Tracy,6,San Rafael,Marin,CA,Female,Black/AfricanAmerican,37.970948,-122.504286
 3647,64,4/23/73,Mckernan,Timothy,16,Petaluma,Sonoma,CA,Male,White/Caucasian,38.265366,-122.822588
-3648,65,4/16/73,"Forshee, Jr",William,17,Miami,Miami-Dade,FL,Male,Black/AfricanAmerican,25.558428,-80.458168
+3648,65,4/16/73,Forshee  Jr,William,17,Miami,Miami-Dade,FL,Male,Black/AfricanAmerican,25.558428,-80.458168
 3649,66,4/10/73,Todd,Diane,18,Annandale,Fairfax,VA,Female,White/Caucasian,38.835762,-77.212794
 3650,51,3/27/73,Blankinship,Jeffrey,3,Port Townsend,Jefferson,WA,Male,White/Caucasian,48.018572,-122.849683
 3651,62,3/12/73,Hillis,Darren,14,Norfolk,Norfolk,VA,Male,White/Caucasian,36.895911,-76.208521
@@ -3681,7 +3680,7 @@
 3680,65,1/30/72,Kelly,Dermot,16,Oglesby,LaSalle,IL,Male,White/Caucasian,41.29531,-89.05953
 3681,62,1/17/72,Griener,Richard,13,Pekin,Tazewell,IL,Male,White/Caucasian,40.548928,-89.638839
 3682,64,1/1/72,Watson,Alisa,14,Tacoma,Pierce,WA,Female,Black/AfricanAmerican,47.253671,-122.444335
-3683,68,12/14/71,"Ashley, Jr.",John,18,Wilmington,New Castle,DE,Male,Black/AfricanAmerican,39.727113,-75.547844
+3683,68,12/14/71,Ashley  Jr.,John,18,Wilmington,New Castle,DE,Male,Black/AfricanAmerican,39.727113,-75.547844
 3684,68,12/10/71,Schulze,Lynne,18,Middlebury,Addison,VT,Female,White/Caucasian,43.991942,-73.171578
 3685,66,12/7/71,Grissim,Jamie,16,Vancouver,Clark,WA,Female,White/Caucasian,45.678996,-122.720499
 3686,66,9/24/71,Moulton,Cathy,16,Portland,Cumberland,ME,Female,White/Caucasian,43.658784,-70.262393
@@ -3775,7 +3774,7 @@
 3774,59,3/5/63,Giusti,Michelle,1,Port Townsend,Jefferson,WA,Female,White/Caucasian,48.018572,-122.849683
 3775,59,3/5/63,Giusti,Clara,1,Port Townsend,Jefferson,WA,Female,White/Caucasian,48.018572,-122.849683
 3776,64,1/11/63,Powell,Phyllis,5,Woodland,Northampton,NC,Female,Black/AfricanAmerican,36.33154,-77.21274
-3777,62,12/17/62,"Jones, III",William,3,Vineland,Cumberland,NJ,Male,White/Caucasian,39.495524,-75.008665
+3777,62,12/17/62,Jones  III,William,3,Vineland,Cumberland,NJ,Male,White/Caucasian,39.495524,-75.008665
 3778,66,9/13/62,Moon,Diane,7,Camp Lejeune,Onslow,NC,Female,White/Caucasian,34.664035,-77.463687
 3779,61,9/13/62,Yoli,Mark,2,Camp Lejeune,Onslow,NC,Male,White/Caucasian,34.664035,-77.463687
 3780,69,6/7/62,Verdecchia,Mary Ann,10,Pittsburgh,Allegheny,PA,Female,White/Caucasian,40.47441,-79.950968
@@ -3797,7 +3796,7 @@
 3796,70,11/21/58,Wells,Adele,7,Flint,Genesee,MI,Female,Black/AfricanAmerican,42.965926,-83.780835
 3797,78,9/19/58,Triska,Rebecca,15,Ambridge,Beaver,PA,Female,White/Caucasian,40.600494,-80.210521
 3798,66,9/6/58,Campbell,Myrisha,3,Goliad,Goliad,TX,Female,White/Caucasian,28.664092,-97.460854
-3799,64,9/6/58,"Campbell, Jr",A,1,Goliad,Goliad,TX,Male,White/Caucasian,28.664092,-97.460854
+3799,64,9/6/58,Campbell  Jr,A,1,Goliad,Goliad,TX,Male,White/Caucasian,28.664092,-97.460854
 3800,77,3/1/58,Redman,Donnis,14,San Pedro,Los Angeles,CA,Female,White/Caucasian,33.753088,-118.253053
 3801,81,3/1/58,Griffin,Michael,18,San Pedro,Los Angeles,CA,Male,White/Caucasian,33.753088,-118.253053
 3802,65,11/1/57,Mahssen,Seif,1,Weirton,Hancock,WV,Male,White/Caucasian,40.41896,-80.58952

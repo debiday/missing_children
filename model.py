@@ -16,17 +16,19 @@ class Child(db.Model):
     fname = db.Column(db.String(50), nullable=False)
     lname = db.Column(db.String(50), nullable=True)
     ethnicity = db.Column(db.String(100), nullable=True)
-    age_missing = db.Column(db.Float, nullable=False)
+    missing_age = db.Column(db.Float, nullable=False)
+    age_2021 = db.Column(db.Integer, nullable=False)
     # current_age = db.Column(db.Integer, nullable= True)
-    
+    #child_id	age_2021	date_missing	lname	fname	missing_age	city	county	state	gender	ethnicity	lat	long
     #Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
 
 
-    def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, gender, ethnicity):
+    def __init__(self, child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, lat, long):
         self.fname = fname
         self.lname = lname
         self.ethnicity = ethnicity
-        self.age_missing = age_missing
+        self.missing_age = missing_age
+        self.age_2021 = age_2021
         # self.city = city
         # self.county = county
         # self.state = state
@@ -62,9 +64,9 @@ class Location(db.Model):
     #Setting up SQLAlchemy relationship between locations and pictures
     # pictures = db.relationship('Picture', backref = 'locations')
 
-    def __init__(self, case_id, dlc, lname, fname, age_missing, city, county, state, sex, ethnicity):
+    def __init__(self, child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, lat, long):
     # def __init__(case_id, city, county, state):
-        self.case_id = case_id
+        self.child_id = child_id
         self.state = state
         self.city = city
         self.county = county

@@ -20,16 +20,16 @@ model.db.create_all()
 def get_children():
     """Load children from dataset into database."""
 
-    with open("data/CA.csv", encoding='utf-8-sig') as children_data:
+    with open("data/finaldata.csv", encoding='utf-8-sig') as children_data:
         for r in enumerate(children_data):
             # print(r[0],r[1].split(','))
             lst = r[1].split(',')
-            
-            r1, r2, r3, r4, r5, r6, r7, r8, r9, r10 = lst
+            print(lst)
+            r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13 = lst
 
-            db.session.add(Child(r1, r2, r3, r4, float(r5), r6, r7, r8, r9, r10))
+            db.session.add(Child(int(r1), r2, r3, r4, r5, float(r6), r7, r8, r9, r10, r11, r12, r13))
             # db.session.add(Location(int(r1), r6, r7, r8)
-            db.session.add(Location(int(r1), r2, r3, r4, float(r5), r6, r7, r8, r9, r10))
+            db.session.add(Location(int(r1), r2, r3, r4, r5, float(r6), r7, r8, r9, r10, r11, r12, r13))
 
     db.session.commit()
 
