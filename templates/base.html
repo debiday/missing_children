@@ -1,22 +1,29 @@
 <!doctype html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
+  <title>{% block title %}The Homepage{% endblock %}</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-
   <link rel="stylesheet" href="/static/style.css">
+  <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
 </head>
-<body>
-  <div class="header">
-    <h1>
-      <p>The Lost Children</p>
-    </h1>
-  </div>
 
-  
 
-  {% block content %}{% endblock %}
-</body>
+  <body>
+    {% block body %}
+    <div class="header">
+      <h1>
+        <p><b>The Lost Children</b></p>
+      </h1>
+    </div>
+    {% endblock %}
+    
+    {% block content %}{% endblock %}
+  </body>
 </html>

@@ -9,12 +9,8 @@
 
 
 from model import db, Child, Location, connect_to_db
-def get_children():
-    """Return all children."""
 
-    return Child.query.all()
-
-
+# delete?
 def get_child_by_id(child_id):
     """Return child details."""
 
@@ -32,10 +28,34 @@ def get_children_by_age(num):
 
     return Child.query.filter_by(missing_age=num).all()
 
+
 def get_children_current_age(num):
     """Return children by current age."""
 
     return Child.query.filter_by(age_2021=num).all()
+
+
+# def get_dict_children():
+#     """Return a child dictionary for each child"""
+
+
+#     child = {
+#         'Name': fname,
+#         'Missing age': age_missing,
+#         'State': state 
+#     }
+
+#     return get_children()
+
+    
+
+#     for child in 
+
+
+def get_children():
+    """Return all children."""
+
+    return Child.query.all()
 
 if __name__ == '__main__':
     from server import app

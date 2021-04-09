@@ -17,14 +17,16 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 </script>
 </div>
 
-<!-- <p>Find the number of children who were missing the year ________. </p> -->
+<!-- Queries </p> -->
 
-<form><h3>
-    <label>Missing children based on your age in 2021:</label>
-    <textarea name="my-age"></textarea>
-</h3></form>
+<form id="age-form">
+    <label><h3>Missing children based on your age in 2021:</h3></label>
+    <textarea name="my-age" id="user-age"></textarea>
+    <button type="submit">Find</button>
 <div class="same-age_children"><p>The children who are the same age as you in the year 2021 are:</p></div>
-<div class="box"></div>
+<div id="child-info"></div>
+</form>
+
 
 
 <form><h3>
@@ -48,4 +50,14 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 </form>
 <p><h8>Based on NAMUS database launched in 2007.</h8></p>
 <h10>Data accessed April 2021</h10>
+
+
+<p id="child1">child</p>
+<script>
+
+    $('#child1').on('hover', () => {
+        $('#child1').html('test'); 
+    });
+
+</script>
 {% endblock %}
