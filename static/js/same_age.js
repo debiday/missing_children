@@ -2,12 +2,13 @@
 console.log('hello');
 
 function showSameAge(evt) {
-    console.log("HI");
+    console.log('hello');
+
     evt.preventDefault();
 
     
     let url="/age";
-    let ageData = {"age": $("#user-age").val()};
+    let ageData = {"user-age": $("#user-age").val()};
 
 
     $.get(url, ageData, (response) => {
@@ -18,5 +19,5 @@ function showSameAge(evt) {
         $('#child-info').html(response);
     });
 }
-
-$("#find-button").on("click", showSameAge);
+$("#age-form").on("submit", showSameAge);
+//$("#find-button").on("submit", showSameAge);

@@ -12,24 +12,26 @@ app.jinja_env.undefined = StrictUndefined
 def same_age():
   """Return children dictionary for users age"""
 
-  age = request.args.get('my-age')
-  
-  if type(age) is int:
+  age = request.args.get("user-age")
+
+  child_info= {}
+  child_info_list = ""
+
+  if age.isdigit():
     children = crud.get_children_current_age(age)
-    
-    child_info_list = ""
+    # child_info= {}
+    # child_info_list = ""
     for child in children:
       for i in range(len(children)):
         child_info = { "fname":child.fname, 
                     "age":child.age_2021 }
-        child_info_list = child_info_list + fname + "\n"
-      print("Hi")
-  print(child_info)
+        child_info_list += child_info.fname + "\n"
 
   # child_info = { "fname":child.fname, 
   #               "age":child.age_2021 }
 
-  return "HI"
+  return child_info_list
+  # return "HI"
 
 
 @app.route('/')
