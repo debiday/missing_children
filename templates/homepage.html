@@ -15,19 +15,19 @@ container: 'map',
 style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 });
 </script>
+
 </div>
 
 <!-- Queries </p> -->
 
 <form id="age-form">
     <label><h3>Missing children based on your age in 2021:</h3></label>
-    <textarea name="my-age" id="user-age"></textarea>
+    <input name="my-age" id="user-age" type="text"></input>
     <button type="submit">Find</button>
-<div class="same-age_children"><p>The children who are the same age as you in the year 2021 are:</p></div>
-<div id="child-info"></div>
+<div id="find-button" class="same-age_children"><p>The children who are the same age as you in the year 2021 are:</p></div>
 </form>
 
-
+<div id="child-info"></div>
 
 <form><h3>
     Find the number of children who were reported missing in the year ________. 
@@ -54,10 +54,14 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 
 <p id="child1">child</p>
 <script>
-
+    
     $('#child1').on('hover', () => {
         $('#child1').html('test'); 
     });
 
 </script>
+
+<div id="root"></div>
+<script src="/static/js/graph/bundle.js"></script>
+<script src="/static/js/same_age.js"></script> 
 {% endblock %}

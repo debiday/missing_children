@@ -8,13 +8,28 @@ app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 
-@app.route('/age.json')
+@app.route('/age')
 def same_age():
   """Return children dictionary for users age"""
 
   age = request.args.get('my-age')
-  child_info = crud.get_children_current_age(age)
-  return jsonify(child_info)
+  
+  if type(age) is int:
+    children = crud.get_children_current_age(age)
+    
+    child_info_list = ""
+    for child in children:
+      for i in range(len(children)):
+        child_info = { "fname":child.fname, 
+                    "age":child.age_2021 }
+        child_info_list = child_info_list + fname + "\n"
+      print("Hi")
+  print(child_info)
+
+  # child_info = { "fname":child.fname, 
+  #               "age":child.age_2021 }
+
+  return "HI"
 
 
 @app.route('/')
@@ -30,7 +45,7 @@ def all_children():
 
     children = crud.get_children()
 
-    return render_template('test.html', children=children)
+    return render/_template('test.html', children=children)
 
 # @app.route('/test.json')
 # def all_children_json():

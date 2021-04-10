@@ -29,15 +29,6 @@ class Child(db.Model):
         self.ethnicity = ethnicity
         self.missing_age = missing_age
         self.age_2021 = age_2021
-        # self.city = city
-        # self.county = county
-        # self.state = state
-        # self.gender = gender
-        # self.ethnicity = ethnicity
-        # self.date_modified = date_modified
-
-        # self.current_age = (current_date - dlc) + age_missing
-        # TODO calculate the child's current age
     
     #Setting up SQLAlchemy relationship between children and locations
     locations = db.relationship('Location', backref = 'children')
