@@ -9,7 +9,7 @@
   <h3 align="center">The Lost Children</h3>
 
   <p align="center">
-    This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021, generated from the [NAMUS-National Missing and Unidentified Persons System] on April 2021. 
+    This project visualizes data of children who went missing at 18 years or younger from 2007 to 2021.
     <br />
     <br />
     <br />
@@ -56,10 +56,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`debiday`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
+This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021. The data is generated from the [NAMUS-National Missing and Unidentified Persons System] with the search
 
 ### Built With
 
