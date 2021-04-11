@@ -21,42 +21,16 @@
   </p>
 </p>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021. The data is generated from the [NAMUS-National Missing and Unidentified Persons System] with the search
+This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021. The data is generated from the [NAMUS-National Missing and Unidentified Persons System](https://www.namus.gov/) with the search criteria set to search for historical records of all missing children in the US including all 52 states. 
+
+The data is supplemented with geolocation data converted by [Geocodio](https://www.geocod.io/docs/#introduction), integrated into a Mapbox tileset and visualized with [Mapbox studio](https://docs.mapbox.com/api/overview/). The same dataset is used to generate the Age to Year Missing Graph with Gender colour legends and built with React and D3. 
+
+Lastly, more information from the [NCMEC](https://www.missingkids.org/footer/media/keyfacts#:~:text=According%20to%20the%20FBI%2C%20in,represents%20reports%20of%20missing%20children.) is used to supplement the information on both the map and graph by showing categories of children who are missing. 
 
 ### Built With
 
@@ -69,8 +43,9 @@ This project visualizes the record of children who went missing when they were 1
 * postgreSQL
 
 APIs
-* [Mapbox API](https://docs.mapbox.com/api/overview/)
-* [Google Charts API](https://developers.google.com/chart/image/docs/making_charts)
+* [Mapbox](https://docs.mapbox.com/api/overview/)
+* [Geocodio] (https://www.geocod.io/docs/#introduction)
+* [Google Charts](https://developers.google.com/chart/image/docs/making_charts)
 
 Front-end
 * Javascript
@@ -106,7 +81,16 @@ This is an example of how to list things you need to use the software and how to
    npm install
    ```
 
+<!-- ROADMAP -->
+## Roadmap
+### MVP
+Working map showing first names of missing children mapped to state and city. 
 
+### 1.0
+Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. Additional visualization with graphs and figures as supplement.
+
+### 2.0
+Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) newletter and verified links to donation portals from relevant organisations. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -114,19 +98,6 @@ This is an example of how to list things you need to use the software and how to
 You may like to use the data or view the data behind the visualizations which was accessed from [NAMUS](https://www.namus.gov/)-The National Missing and Unidentified Persons System on the 3rd of April 2021, and supplemented with GPS co-ordinates. 
 
 (As of April 10, the future availabilty of this data [remains undercertain](https://www.kxan.com/investigations/the-future-of-a-national-missing-persons-database-uncertain/) due to funding cuts by the [National Institute of Justice](https://nij.ojp.gov/).)
-
-
-<!-- ROADMAP -->
-## Roadmap
-## Version 1.0
-Working map showing first names of missing children mapped to state and city. Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. Additional visualization with graphs and figures.
-
-## Version 2.0
-Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) newletter and verified links to donation portals from relevant organisations. 
-
-
-
-
 
 <!-- CONTACT -->
 ## Contact
