@@ -9,9 +9,8 @@
   <h3 align="center">The Lost Children</h3>
 
   <p align="center">
-    This project visualizes the data generated from the [NAMUS-]
+    This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021, generated from the [NAMUS-National Missing and Unidentified Persons System] on April 2021. 
     <br />
-    <a href="https://github.com/debiday/The_Lost_Children"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/debiday/The_Lost_Children">View Demo</a>
