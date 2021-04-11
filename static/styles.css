@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+html { overflow-y: scroll; overflow-x:hidden; }
+
+body {
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: rgb(13, 13, 41);
+  }
+
+/* Mapbox Styling */
+#map {
+    width: 800px; 
+    height: 600px
+}
+
+/* D3 & React Graph Styling */
+pre {
+  font-size: 7em;
+}
+.tick line {
+  stroke: #C0C0BB;
+}
+.tick text {
+  fill: #635F5D;
+  cursor: default;
+}
+.axis-label {
+  font-size: 2.5em;
+  fill: #635F5D;
+}
+
+/* Donut pie chart styling */
+
+
+  
+
+

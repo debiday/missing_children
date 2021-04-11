@@ -16,7 +16,7 @@ class Child(db.Model):
     fname = db.Column(db.String(50), nullable=False)
     lname = db.Column(db.String(50), nullable=True)
     ethnicity = db.Column(db.String(100), nullable=True)
-    missing_age = db.Column(db.Float, nullable=False)
+    missing_age = db.Column(db.Integer, nullable=False)
     age_2021 = db.Column(db.Integer, nullable=False)
     # current_age = db.Column(db.Integer, nullable= True)
     #child_id	age_2021	date_missing	lname	fname	missing_age	city	county	state	gender	ethnicity	lat	long

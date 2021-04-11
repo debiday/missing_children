@@ -15,20 +15,31 @@ def same_age():
   age = request.args.get("user-age")
 
   child_info= {}
-  child_info_list = ""
+  child_info_list_all = ""
 
   if age.isdigit():
     children = crud.get_children_current_age(age)
-    # child_info= {}
-    # child_info_list = ""
-    for child in children:
-      for i in range(len(children)):
+    for i in range(len(children)): 
+      for child in children:
         child_info = { "fname":child.fname, 
-                    "age":child.age_2021 }
-        child_info_list += child_info.fname + "\n"
+                      "missing_age":child.missing_age }
+        child_info_list = str(child.fname) + " " + str(child.missing_age)+ "\n"
+    # child_info= str(children)
+        child_info_list_all += child_info_list
 
-  # child_info = { "fname":child.fname, 
-  #               "age":child.age_2021 }
+    return child_info_list_all
+
+
+    # for i, child in enumerate(children):
+    #   for i in range(len(children)):
+    #     child_info = { "fname":child.fname, 
+    #                 "age":child.age_2021 }
+    #    // TODO: Figure out how to index into dict
+    #     child_info_list += child_info.fname + "\n"
+
+    # for child in children:
+    #   child_info = { "fname":child.fname, 
+    #                 "age":child.age_2021 }
 
   return child_info_list
   # return "HI"
