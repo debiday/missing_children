@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/debiday/The_Lost_Children">
-    <img src="static/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="static/images/logo1.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">The Lost Children</h3>
