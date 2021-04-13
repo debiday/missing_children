@@ -56,6 +56,26 @@ Front-end
 * HTML/ CSS
 
 
+<!-- ROADMAP -->
+## Roadmap
+### MVP
+Working map showing first names of missing children mapped to state and city. 
+
+### 1.0 (Current)
+Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. Additional visualization with graphs and figures.
+
+### 2.0
+Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) newletter and verified links to donation portals from relevant organisations. 
+
+### 3.0
+A search bar for users to search for entries based on state and city.
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+You may like to use the data or view the data behind the visualizations which was accessed from [NAMUS](https://www.namus.gov/)-The National Missing and Unidentified Persons System on the 3rd of April 2021, and supplemented with GPS co-ordinates. 
+
+(As of April 10, the future availabilty of this data [remains undercertain](https://www.kxan.com/investigations/the-future-of-a-national-missing-persons-database-uncertain/) due to funding cuts by the [National Institute of Justice](https://nij.ojp.gov/).)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -80,24 +100,6 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-
-<!-- ROADMAP -->
-## Roadmap
-### MVP
-Working map showing first names of missing children mapped to state and city. 
-
-### 1.0
-Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. Additional visualization with graphs and figures as supplement.
-
-### 2.0
-Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) newletter and verified links to donation portals from relevant organisations. 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-You may like to use the data or view the data behind the visualizations which was accessed from [NAMUS](https://www.namus.gov/)-The National Missing and Unidentified Persons System on the 3rd of April 2021, and supplemented with GPS co-ordinates. 
-
-(As of April 10, the future availabilty of this data [remains undercertain](https://www.kxan.com/investigations/the-future-of-a-national-missing-persons-database-uncertain/) due to funding cuts by the [National Institute of Justice](https://nij.ojp.gov/).)
 
 <!-- CONTACT -->
 ## Contact
