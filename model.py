@@ -1,3 +1,4 @@
+
 """Models for children database"""
 
 from flask_sqlalchemy import SQLAlchemy
@@ -62,12 +63,62 @@ class Location(db.Model):
         self.city = city
         self.county = county
 
-
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return f"<Location case_id={self.case_id} state={self.state} city={self.city}>"
 
+
+class Users(db.Model):
+    """A list of users."""
+
+    __tablename__ = "users"
+
+    user_id = db.Column(db.Integer, autoincrement=True,  primary_key=True)
+    first_name = db.Column(db.String(50), nullable=False)
+    last_name = db.Column(db.String(50), nullable=True)
+    email = db.Column(db.String(50), nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+
+
+    def __init__(self, user_id, first_name, last_name, email, password):
+        self.user_id = user_id
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.password = password
+
+
+    def __repr__(self):
+        """Provide helpful representation when printed."""
+
+        return f"<User user_id={self.user_id} lname={self.last_name} email={self.email}>"
+
+
+class Trackings(db.Model):
+    """A list of child records with notes."""
+
+    __tablename__ = "trackings"
+
+    tracking_id = db.Column(db.Integer, autoincrement=True,  primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+    child_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), nullable=False)
+    note = db.Column(db.String(2000), nullable=True)
+
+
+    def __init__(self, tracking_id, user_id, child_id, note):
+        self.tracking_id = tracking_id
+        self.user_id = user_id
+        self.child_id = child_id
+        self.note = note
+
+    users = db.relationship('Users', backref = 'trackings')
+    children = db.relationship('Child', backref= 'trackings')
+
+    def __repr__(self):
+        """Provide helpful representation when printed."""
+
+        return f"<Tracking tracking_id={self.tracking_id} child_id={self.child_id} user_id={self.user_id}>"
 
 
 # class Picture(db.Model):
@@ -113,3 +164,24 @@ if __name__ == "__main__":
 
 
 
+# USERS
+# -user_id (pk)
+# -first name
+# -last name
+# -email
+# -password
+
+
+# TRACKINGS
+# -tracking id
+# -user id
+# -child id
+# -note 
+
+
+# CHILD 
+
+# 1. add these tables to dbdiagram.io 
+# 2. create these classes in model.py 
+# 3. create crud functions to instantiate a user and a tracking
+# 4. create fake users using faker library and create a fake tracking record for each user 

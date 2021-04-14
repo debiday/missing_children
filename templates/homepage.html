@@ -3,6 +3,13 @@
 {% block title %}Homepage{% endblock %}
 
 {% block content %}
+<!-- Login  -->
+<form action="/login" id="login-form" method="POST">
+    <input type="text" name="username" id="username-field class="login-form-field" placeholder="Username">
+    <input type="password" name="password" id="password-field" class="login-form" placeholder="Password">
+    <input type="submit" value="Login" id="login-form-submit">
+</form>
+
 <!-- Mapbox  -->
 <div class="map">
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>

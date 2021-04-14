@@ -21,6 +21,13 @@
 
   <body>
     {% block body %}
+    
+    {% for msg in get_flashed_messages() %}
+      <p class="flash-msg">
+        {{ msg }}
+      </p>
+    {% endfor %}
+
     <div class="header">
       <h1>
         <p><b>The Lost Children</b></p>
