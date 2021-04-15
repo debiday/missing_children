@@ -8,39 +8,23 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-# @app.route('/')
-# def index ():
-#   if 'username' in session:
-#     return 'Logged in as %s' escape(session['username'])
-#   return 'You are not logged in'
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#   # uses wtfforms custom loginform to validate?
-#   form = LoginForm()
-#   if form.validate_on_submit():
-#     login_user(user)
+# <-- Routes for homepage -->
+@app.route('/')
+def show_homepage():
+    """Show the homepage."""
 
-#     flask.flash('Logged in successfully.')
-#     next = flask.request.args.get('next')
+    return render_template("homepage.html")
 
-#     if not is_safe_url(next):
-#       return flask.abort(400)
+# @app.route('/test')
+# def all_children():
+#     """View all children."""
 
-#     return flask.redirect(next or flask.url_for('index'))
-#   return flask.render_template('homepage.html', form=form)
+#     children = crud.get_children()
 
-# @app.route('/logout')
-# def logout():
-#   #remove the username form the session if it's there
-#   session.pop('username', None)
-#   return redirect(url_for('index'))
+#     return render/_template('test.html', children=children)
+# @app.route('/age')
 
-
-  
-
-
-@app.route('/age')
 def same_age():
   """Return children dictionary for users age"""
 
@@ -70,7 +54,7 @@ def same_age():
     #   for i in range(len(children)):
     #     child_info = { "fname":child.fname, 
     #                 "age":child.age_2021 }
-    #    // TODO: Figure out how to index into dict
+
     #     child_info_list += child_info.fname + "\n"
 
     # for child in children:
@@ -78,41 +62,51 @@ def same_age():
     #                 "age":child.age_2021 }
 
   return child_info_list
-  # return "HI"
+
+# <--Routes for user and tracking -->
+@app.route('/tracking-page/<user_id>')
+def user_page():
+  """Show user's tracking-page."""
+
+  user = crud.get_user_by_id(user_id)
+
+  return render_template('tracking-page.html', user=user)
+
+@app.route('/', methods = ["POST"])
+def register_user():
+  """Saves user information to database"""
+
+  fname = request.form.get('first_name')
+  email = request.form.get('email')
+  password = request.form.get('password')
+
+  user = crud.get_user_by_email(email)
+
+  if user: 
+    flash('Email is already in use. Please log in.')
+  else:
+    flash('Please register for a new account.')
 
 
-@app.route('/')
-def show_homepage():
-    """Show the homepage."""
+@app.route('/login', methods = ['POST'])
+def submit_login_form():
+  """Submits the login form."""
 
-    return render_template("homepage.html")
+  user = crud.get_user_by_email(request.form['email'])
 
-@app.route('/test')
-def all_children():
-    """View all children."""
+  password = request.form['password']
 
-    children = crud.get_children()
+  if user == None:
+    flash('''An account for this email doesn't exist yet.
+              Please create a new account.''')
+  elif password != user.password:
+    flash('Wrong password. Please try again.')
+  else: 
+    flash('Logged in!')
+    session['user-id'] = user.user_id
 
-    return render/_template('test.html', children=children)
+  return redirect('/tracking-page')
 
-# @app.route('/test.json')
-# def all_children_json():
-#   """Return a child dictionary for each child"""
-
-#     child = crud.get_children()
-  
-#     return jsonify([{"name":"Kat"}])
-# # children into dictionary
-# """
-# crud:
-# 1. query for children
-# 2. loop over each child and make a dictionary 
-#     (something like {"name":child.name, "age":child.age})
-#     add each child dict into a list
-# server.py:
-# 3. jsonify the list of child dicts and send that to the front end
-# 4. create js file (check script for jquery $.get(url))
-# """
 
 
 

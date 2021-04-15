@@ -1,12 +1,9 @@
-
 """Models for children database"""
 
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 
 db = SQLAlchemy()
-
-
 
 class Child(db.Model):
     """A list of children."""
@@ -19,9 +16,8 @@ class Child(db.Model):
     ethnicity = db.Column(db.String(100), nullable=True)
     missing_age = db.Column(db.Integer, nullable=False)
     age_2021 = db.Column(db.Integer, nullable=False)
-    # current_age = db.Column(db.Integer, nullable= True)
-    #child_id	age_2021	date_missing	lname	fname	missing_age	city	county	state	gender	ethnicity	lat	long
-    #Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
+    # # child_id	age_2021	date_missing	lname	fname	missing_age	city	county	state	gender	ethnicity	lat	long
+    # # Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
 
 
     def __init__(self, child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, lat, long):
@@ -32,9 +28,10 @@ class Child(db.Model):
         self.age_2021 = age_2021
     
     #Setting up SQLAlchemy relationship between children and locations
-    locations = db.relationship('Location', backref = 'children')
-
-
+    location = db.relationship('Location', backref = 'children')
+    
+    # trackings = a list of Tracking objects
+    
     def __repr__(self):
         """Provide helpful representation when printed."""
 
@@ -52,7 +49,6 @@ class Location(db.Model):
     city = db.Column(db.String(50), nullable=False)
     county = db.Column(db.String(50), nullable=True)
 
-    # children = backref a list of children
     #Setting up SQLAlchemy relationship between locations and pictures
     # pictures = db.relationship('Picture', backref = 'locations')
 
@@ -63,31 +59,32 @@ class Location(db.Model):
         self.city = city
         self.county = county
 
+    # children = a list of Child objects
+
     def __repr__(self):
         """Provide helpful representation when printed."""
 
         return f"<Location case_id={self.case_id} state={self.state} city={self.city}>"
 
 
-class Users(db.Model):
+class User(db.Model):
     """A list of users."""
 
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer, autoincrement=True,  primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
-    last_name = db.Column(db.String(50), nullable=True)
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
 
-    def __init__(self, user_id, first_name, last_name, email, password):
+    def __init__(self, user_id, first_name, email, password):
         self.user_id = user_id
         self.first_name = first_name
-        self.last_name = last_name
         self.email = email
         self.password = password
 
+    # trackings = a list of Tracking objects
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -95,7 +92,7 @@ class Users(db.Model):
         return f"<User user_id={self.user_id} lname={self.last_name} email={self.email}>"
 
 
-class Trackings(db.Model):
+class Tracking(db.Model):
     """A list of child records with notes."""
 
     __tablename__ = "trackings"
@@ -112,8 +109,8 @@ class Trackings(db.Model):
         self.child_id = child_id
         self.note = note
 
-    users = db.relationship('Users', backref = 'trackings')
-    children = db.relationship('Child', backref= 'trackings')
+    user = db.relationship('User', backref = 'trackings')
+    child = db.relationship('Child', backref= 'trackings')
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -136,8 +133,6 @@ class Trackings(db.Model):
 #         """Provide helpful representation when printed."""
 
 #         return f"<Picture pic_id={self.pic_id} pic_state={self.pic_state}>"
-
-
 
 
 
@@ -185,3 +180,8 @@ if __name__ == "__main__":
 # 2. create these classes in model.py 
 # 3. create crud functions to instantiate a user and a tracking
 # 4. create fake users using faker library and create a fake tracking record for each user 
+
+#Create a 'create account/register' form (html)
+#use /login route or you can create a new route /create_account
+#in that route's view function, you will use the crud.create_user function (passing in the values from your form)
+# you can utilize session and store that user's informat

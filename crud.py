@@ -5,12 +5,9 @@
 """Making it easier to access data from DB?"""
 
 
-# for early stage small db testing- one state
+from model import db, Child, Location, User, Tracking, connect_to_db
 
-
-from model import db, Child, Location, connect_to_db
-
-# delete?
+# <-- Children and Location  -->
 def get_child_by_id(child_id):
     """Return child details."""
 
@@ -38,18 +35,13 @@ def get_children_current_age(num):
 # def get_dict_children():
 #     """Return a child dictionary for each child"""
 
-
 #     child = {
 #         'Name': fname,
 #         'Missing age': age_missing,
 #         'State': state 
 #     }
-
 #     return get_children()
 
-    
-
-#     for child in 
 
 
 def get_children():
@@ -57,15 +49,47 @@ def get_children():
 
     return Child.query.all()
 
+# <-- Users and Tracking  -->
+def create_user(first_name, email, password):
+    """Create and return a new user."""
 
-def create_user(first_name, last_name, email, password):
-
-    new_user = User(first_name=first_name, last_name=last_name, email=email, password=password)
+    new_user = User(first_name=first_name, email=email, password=password)
 
     db.session.add(new_user)
     db.session.commit()
 
     return new_user
+
+def create_tracking(user_id, child_id, note):
+    """Create and return a new tracking."""
+
+    new_tracking = Tracking(user_id=user_id, child_id=child_id, note=note)
+
+    db.session.add(new_tracking)
+    db.session.commit()
+
+    return new_tracking
+    
+
+def get_users():
+    """Return all users."""
+
+    return User.query.all()
+
+def get_user_by_id():
+    """Returns user by id"""
+
+    return User.query.get(user_id)
+
+
+def get_user_by_email(email):
+    """Return a user by email."""
+
+    return User.query.filter(User.email == email).first()
+
+
+
+
 
 
 if __name__ == '__main__':
