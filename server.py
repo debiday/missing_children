@@ -89,13 +89,13 @@ def register_user():
   return redirect('/')
 
 
-@app.route('/tracking-page/<user_id>')
+@app.route('/tracking-page')
 def user_page():
   """Show user's tracking-page."""
 
-  user = crud.get_user_by_id(user_id)
+  # user = crud.get_user_by_id(user_id)
 
-  return render_template('tracking-page.html', user=user)
+  return render_template('tracking-page.html')
 
 @app.route('/login', methods = ['POST'])
 def submit_login_form():

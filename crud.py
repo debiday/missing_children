@@ -70,10 +70,10 @@ def get_children():
     return Child.query.all()
 
 # <-- Users and Tracking  -->
-def create_user(first_name, email, password):
+def create_user(email, password):
     """Create and return a new user."""
 
-    new_user = User(first_name=first_name, email=email, password=password)
+    new_user = User(email=email, password=password)
 
     db.session.add(new_user)
     db.session.commit()
