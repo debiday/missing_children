@@ -80,6 +80,7 @@ def create_user(email, password):
 
     return new_user
 
+
 def create_tracking(user_id, child_id, note):
     """Create and return a new tracking."""
 
@@ -96,9 +97,10 @@ def get_users():
 
     return User.query.all()
 
-def get_user_by_id():
-    """Returns user by id"""
 
+def get_user_by_id(user_id):
+    """Returns user by id"""
+    
     return User.query.get(user_id)
 
 
@@ -106,9 +108,6 @@ def get_user_by_email(email):
     """Return a user by email."""
 
     return User.query.filter(User.email == email).first()
-
-
-
 
 
 

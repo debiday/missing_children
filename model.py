@@ -51,7 +51,7 @@ class User(db.Model):
 
     __tablename__ = "users"
 
-    user_id = db.Column(db.Integer, autoincrement=True,  primary_key=True)
+    user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
@@ -68,13 +68,13 @@ class Tracking(db.Model):
 
     __tablename__ = "trackings"
 
-    tracking_id = db.Column(db.Integer, autoincrement=True,  primary_key=True)
+    tracking_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     child_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), nullable=False)
     note = db.Column(db.String(2000), nullable=True)
 
     user = db.relationship('User', backref = 'trackings')
-    child = db.relationship('Child', backref= 'trackings')
+    child = db.relationship('Child', backref = 'trackings')
 
     def __repr__(self):
         """Provide helpful representation when printed."""

@@ -72,6 +72,7 @@ def show_registration():
     return render_template("registration.html")
 
 
+
 @app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""
@@ -84,6 +85,8 @@ def register_user():
   if user: 
     flash('Email is already in use. Please log in.')
   else:
+    user = crud.create_user(email, password)
+    session["email"] = email
     flash('Your account has been created! Please log in.')
 
   return redirect('/')
@@ -92,10 +95,17 @@ def register_user():
 @app.route('/tracking-page')
 def user_page():
   """Show user's tracking-page."""
+# TODO: Remove ability to access this page if not logged in
+  if 'email' not in session:
+    return redirect("/")
 
-  # user = crud.get_user_by_id(user_id)
+  if 'email' in session:
+    user = crud.get_user_by_id(session['user_id'])
+    # session["email"] = email
 
-  return render_template('tracking-page.html')
+  return render_template('tracking-page.html', user=user)
+  
+
 
 @app.route('/login', methods = ['POST'])
 def submit_login_form():
@@ -114,7 +124,7 @@ def submit_login_form():
 
   else: 
     flash('Logged in!')
-    session['user-id'] = user.user_id
+    session['user_id'] = user.user_id
 
   return redirect('/tracking-page')
 
