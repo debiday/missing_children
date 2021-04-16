@@ -5,11 +5,14 @@
 {% block content %}
 <!-- Login  -->
 <form action="/login" id="login-form" method="POST">
-    <input type="text" name="username" id="username-field class="login-form-field" placeholder="Username">
-    <input type="password" name="password" id="password-field" class="login-form" placeholder="Password">
+    <input type="text" name="email" id="email-field" class="login-email-field" placeholder="Email">
+    <input type="password" name="password" id="password" class="login-form" placeholder="Password">
     <input type="submit" value="Login" id="login-form-submit">
-    <input type="submit" value="Register" id="register-form">
-</form> 
+</form>
+
+<form action="/registration">
+<input type="submit" value="Register" id="register-form">
+</form>
 
 <!-- Mapbox  -->
 <div class="map">
@@ -40,6 +43,7 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 
 <p><h8>Based on NAMUS database launched in 2007.</h8></p>
 <h10>Data accessed April 2021</h10>
+<script src="/static/js/same_age.js"></script>
 
 <!-- IDK   -->
 <p id="child1">child</p>
@@ -55,7 +59,9 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 
 <div id="root"></div>
 <script src="/static/js/graph/bundle.js"></script>
-<script src="/static/js/same_age.js"></script> 
+<script src="https://unpkg.com/react@16.9.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
 
 <!--Google Graph  -->
 <div class="googlegraph">

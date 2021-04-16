@@ -23,8 +23,8 @@ def show_homepage():
 #     children = crud.get_children()
 
 #     return render/_template('test.html', children=children)
-# @app.route('/age')
 
+@app.route('/age')
 def same_age():
   """Return children dictionary for users age"""
 
@@ -39,7 +39,7 @@ def same_age():
       for child in children:
         child_info = { "fname":child.fname,
                        "lname": child.lname, 
-                      "missing_age":int(child.missing_age),
+                      "missing_age":child.missing_age,
                      }              
         child_info_list = f"{child.fname} {child.lname}, {child.missing_age:.0f} years old. "
     # child_info= str(children)
@@ -64,19 +64,18 @@ def same_age():
   return child_info_list
 
 # <--Routes for user and tracking -->
-@app.route('/tracking-page/<user_id>')
-def user_page():
-  """Show user's tracking-page."""
 
-  user = crud.get_user_by_id(user_id)
+@app.route('/registration')
+def show_registration():
+    """Show registration page."""
 
-  return render_template('tracking-page.html', user=user)
+    return render_template("registration.html")
 
-@app.route('/', methods = ["POST"])
+
+@app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""
 
-  fname = request.form.get('first_name')
   email = request.form.get('email')
   password = request.form.get('password')
 
@@ -85,8 +84,18 @@ def register_user():
   if user: 
     flash('Email is already in use. Please log in.')
   else:
-    flash('Please register for a new account.')
+    flash('Your account has been created! Please log in.')
 
+  return redirect('/')
+
+
+@app.route('/tracking-page/<user_id>')
+def user_page():
+  """Show user's tracking-page."""
+
+  user = crud.get_user_by_id(user_id)
+
+  return render_template('tracking-page.html', user=user)
 
 @app.route('/login', methods = ['POST'])
 def submit_login_form():
@@ -101,14 +110,13 @@ def submit_login_form():
               Please create a new account.''')
   elif password != user.password:
     flash('Wrong password. Please try again.')
+    return redirect('/')
+
   else: 
     flash('Logged in!')
     session['user-id'] = user.user_id
 
   return redirect('/tracking-page')
-
-
-
 
 
 if __name__ == "__main__":

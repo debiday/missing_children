@@ -1,5 +1,5 @@
 "use strict";
-console.log('hello');
+
 
 function showSameAge(evt) {
     console.log('hello');

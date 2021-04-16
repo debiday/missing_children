@@ -5,9 +5,6 @@ from server import app
 
 from crud import create_user
 
-
-#__________________________________________________#
-
 import os
 import crud
 import model
@@ -24,20 +21,15 @@ def get_children():
 
     with open("data/finaldata.csv", encoding='utf-8-sig') as children_data:
         for r in enumerate(children_data):
-            # print(r[0],r[1].split(','))
-            lst = r[1].split(',')
-            print(lst)
-            r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13 = lst
+            data = r[1].split(',')
+            child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, latitude, longitude = data
 
-            db.session.add(Child(r1, int(r2), r3, r4, r5, int(r6), r7, r8, r9, r10, r11, r12, r13))
-            # db.session.add(Location(r1, int(r6), r7, r8)
-            db.session.add(Location(r1, int(r2), r3, r4, r5, int(r6), r7, r8, r9, r10, r11, r12, r13))
+            child_instance = crud.create_child(fname=fname, lname=lname, ethnicity=ethnicity, missing_age=int(missing_age), age_2021=int(age_2021))
+            
+            location_instance = crud.create_location(child_id=child_instance.child_id, state=state, city=city, county=county)
 
-    db.session.commit()
-
-# create_user()
-
-#__________________________________________________#
+            # print(location_instance)
+            # print(location_instance.child_id)
 
 
 if __name__ == '__main__':

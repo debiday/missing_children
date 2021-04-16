@@ -16,20 +16,7 @@ class Child(db.Model):
     ethnicity = db.Column(db.String(100), nullable=True)
     missing_age = db.Column(db.Integer, nullable=False)
     age_2021 = db.Column(db.Integer, nullable=False)
-    # # child_id	age_2021	date_missing	lname	fname	missing_age	city	county	state	gender	ethnicity	lat	long
-    # # Case Number,DLC,Last Name,First Name,Missing Age,City,County,State,Sex,Race / Ethnicity,Date Modified
 
-
-    def __init__(self, child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, lat, long):
-        self.fname = fname
-        self.lname = lname
-        self.ethnicity = ethnicity
-        self.missing_age = missing_age
-        self.age_2021 = age_2021
-    
-    #Setting up SQLAlchemy relationship between children and locations
-    location = db.relationship('Location', backref = 'children')
-    
     # trackings = a list of Tracking objects
     
     def __repr__(self):
@@ -38,33 +25,25 @@ class Child(db.Model):
         return f"<Child child_id={self.child_id} name={self.fname} {self.lname}>"
 
 
-
 class Location(db.Model):
     """A list of case locations."""
 
     __tablename__ = "locations"
 
-    case_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), autoincrement=True,  primary_key=True)
+    location_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    child_id = db.Column(db.Integer, db.ForeignKey('children.child_id'))
     state = db.Column(db.String(2), nullable=False)
     city = db.Column(db.String(50), nullable=False)
     county = db.Column(db.String(50), nullable=True)
 
-    #Setting up SQLAlchemy relationship between locations and pictures
-    # pictures = db.relationship('Picture', backref = 'locations')
-
-    def __init__(self, child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, lat, long):
-    # def __init__(case_id, city, county, state):
-        self.child_id = child_id
-        self.state = state
-        self.city = city
-        self.county = county
+    child = db.relationship('Child', backref = 'locations')
 
     # children = a list of Child objects
 
     def __repr__(self):
         """Provide helpful representation when printed."""
 
-        return f"<Location case_id={self.case_id} state={self.state} city={self.city}>"
+        return f"<Location child_id={self.child_id} state={self.state} city={self.city}>"
 
 
 class User(db.Model):
@@ -77,19 +56,12 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
-
-    def __init__(self, user_id, first_name, email, password):
-        self.user_id = user_id
-        self.first_name = first_name
-        self.email = email
-        self.password = password
-
     # trackings = a list of Tracking objects
 
     def __repr__(self):
         """Provide helpful representation when printed."""
 
-        return f"<User user_id={self.user_id} lname={self.last_name} email={self.email}>"
+        return f"<User user_id={self.user_id} email={self.email}>"
 
 
 class Tracking(db.Model):
@@ -101,13 +73,6 @@ class Tracking(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     child_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), nullable=False)
     note = db.Column(db.String(2000), nullable=True)
-
-
-    def __init__(self, tracking_id, user_id, child_id, note):
-        self.tracking_id = tracking_id
-        self.user_id = user_id
-        self.child_id = child_id
-        self.note = note
 
     user = db.relationship('User', backref = 'trackings')
     child = db.relationship('Child', backref= 'trackings')

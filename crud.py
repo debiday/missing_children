@@ -8,6 +8,26 @@
 from model import db, Child, Location, User, Tracking, connect_to_db
 
 # <-- Children and Location  -->
+def create_child(fname, lname, ethnicity, missing_age, age_2021):
+
+    new_child = Child(fname=fname, lname=lname, ethnicity=ethnicity, missing_age=missing_age, age_2021=age_2021)
+
+    db.session.add(new_child)
+    db.session.commit()
+
+    return new_child
+
+
+def create_location(child_id, state, city, county):
+
+    new_location = Location(child_id=child_id, state=state, city=city, county=county)
+
+    db.session.add(new_location)
+    db.session.commit()
+
+    return new_location    
+
+
 def get_child_by_id(child_id):
     """Return child details."""
 
