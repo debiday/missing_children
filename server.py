@@ -100,7 +100,7 @@ def user_page():
     return redirect("/")
 
   if 'email' in session:
-    user = crud.get_user_by_id(session['user_id'])
+    user = crud.get_user_by_email(session['email'])
     # session["email"] = email
 
   return render_template('tracking-page.html', user=user)
@@ -112,7 +112,6 @@ def submit_login_form():
   """Submits the login form."""
 
   user = crud.get_user_by_email(request.form['email'])
-
   password = request.form['password']
 
   if user == None:
@@ -124,10 +123,17 @@ def submit_login_form():
 
   else: 
     flash('Logged in!')
-    session['user_id'] = user.user_id
+    session['email'] = user.email
 
   return redirect('/tracking-page')
 
+@app.route('/logout')
+def logout():
+
+    session.pop('logged_in_user_id', None)
+    flash("Successfully logged out")
+        
+    return redirect('/')
 
 if __name__ == "__main__":
     connect_to_db(app)
