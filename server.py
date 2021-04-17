@@ -8,8 +8,9 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-
+# <!--------------------------------------------------------------->
 # <-- Routes for homepage -->
+# <!--------------------------------------------------------------->
 @app.route('/')
 def show_homepage():
     """Show the homepage."""
@@ -63,8 +64,10 @@ def same_age():
 
   return child_info_list
 
-# <--Routes for user and tracking -->
 
+# <!--------------------------------------------------------------->
+# <--Routes for user and tracking -->
+# <!--------------------------------------------------------------->
 @app.route('/registration')
 def show_registration():
     """Show registration page."""

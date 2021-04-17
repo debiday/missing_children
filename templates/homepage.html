@@ -3,7 +3,10 @@
 {% block title %}Homepage{% endblock %}
 
 {% block content %}
+
+<!--------------------------------------------------------------->
 <!-- Login  -->
+<!--------------------------------------------------------------->
 <form action="/login" id="login-form" method="POST">
     <input type="text" name="email" id="email-field" class="login-email-field" placeholder="Email">
     <input type="password" name="password" id="password" class="login-form" placeholder="Password">
@@ -14,7 +17,9 @@
 <input type="submit" value="Register" id="register-form">
 </form>
 
+<!--------------------------------------------------------------->
 <!-- Mapbox  -->
+<!--------------------------------------------------------------->
 <div class="map">
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
@@ -29,8 +34,9 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 </script>
 </div>
 
+<!--------------------------------------------------------------->
 <!-- Queries  -->
-
+<!--------------------------------------------------------------->
 <form id="age-form">
     <label><h3>Missing children based on your age in 2021:</h3></label>
     <input name="user-age" id="user-age" type="text">
@@ -45,7 +51,9 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 <h10>Data accessed April 2021</h10>
 <script src="/static/js/same_age.js"></script>
 
+<!--------------------------------------------------------------->
 <!-- IDK   -->
+<!--------------------------------------------------------------->
 <p id="child1">child</p>
 <script>
     
@@ -55,15 +63,19 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 
 </script>
 
+<!--------------------------------------------------------------->
 <!--D3 and React Graph  -->
-
+<!--------------------------------------------------------------->
 <div id="root"></div>
 <script src="/static/js/graph/bundle.js"></script>
 <script src="https://unpkg.com/react@16.9.0/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
 
+
+<!--------------------------------------------------------------->
 <!--Google Graph  -->
+<!--------------------------------------------------------------->
 <div class="googlegraph">
 <html>
   <head>
