@@ -7,11 +7,11 @@
 
 from model import db, Child, Location, User, Tracking, connect_to_db
 
-# <---------------------------->
-# <-- Children and Location  -->
-# <---------------------------->
+# <--------------------------------------------------------------->
+# <Children and Location Objects>
+# <--------------------------------------------------------------->
 
-def create_child(fname, lname, ethnicity, missing_age, age_2021):
+def create_child(fname, lname, ethnicity, date_missing,missing_age, age_2021):
     """Create and return a new child.
     e.g.
 
@@ -20,7 +20,7 @@ def create_child(fname, lname, ethnicity, missing_age, age_2021):
     
     """
 
-    new_child = Child(fname=fname, lname=lname, ethnicity=ethnicity, missing_age=missing_age, age_2021=age_2021)
+    new_child = Child(fname=fname, lname=lname, ethnicity=ethnicity, date_missing=date_missing, missing_age=missing_age, age_2021=age_2021)
 
     db.session.add(new_child)
     db.session.commit()
@@ -37,11 +37,33 @@ def create_location(child_id, state, city, county):
 
     return new_location    
 
+# <--------------------------------------------------------------->
+# <Children and Location Queries>
+# <--------------------------------------------------------------->
 
 def get_child_by_id(child_id):
-    """Return child details."""
+    """Return child details by id number."""
 
     return Child.query.get(child_id)
+
+
+def get_child_by_fname(fname):
+    """Return children by fname"""
+
+    return Child.query.filter_by(fname=fname).all()
+
+
+def get_child_by_lname(lname):
+    """Return children by lname"""
+
+    return Child.query.filter_by(lname=lname).all()
+
+
+def get_child_by_county(county):
+    """Return children by county"""
+
+    return Location.query.filter_by(county=county).all()
+
 
 
 def get_children_by_state(state):
@@ -60,6 +82,8 @@ def get_children_current_age(num):
     """Return children by current age."""
 
     return Child.query.filter_by(age_2021=num).all()
+
+
 
 
 # def get_children(age, ..., state)
@@ -86,9 +110,9 @@ def get_children():
 
     return Child.query.all()
 
-# <------------------------------------>
-# <-- Setting up Users and Tracking  -->
-# <------------------------------------>
+# <--------------------------------------------------------------->
+# <Setting up Users and Tracking>
+# <--------------------------------------------------------------->
 
 def create_user(email, password):
     """Create and return a new user."""

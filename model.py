@@ -14,6 +14,7 @@ class Child(db.Model):
     fname = db.Column(db.String(50), nullable=False)
     lname = db.Column(db.String(50), nullable=True)
     ethnicity = db.Column(db.String(100), nullable=True)
+    date_missing = db.Column(db.String(15), nullable=True)
     missing_age = db.Column(db.Integer, nullable=False)
     age_2021 = db.Column(db.Integer, nullable=False)
 

@@ -24,7 +24,7 @@ def get_children():
             data = r[1].split(',')
             child_id, age_2021, date_missing, lname, fname, missing_age, city, county, state, gender, ethnicity, latitude, longitude = data
 
-            child_instance = crud.create_child(fname=fname, lname=lname, ethnicity=ethnicity, missing_age=int(missing_age), age_2021=int(age_2021))
+            child_instance = crud.create_child(fname=fname, lname=lname, ethnicity=ethnicity, date_missing=date_missing, missing_age=int(missing_age), age_2021=int(age_2021))
             
             location_instance = crud.create_location(child_id=child_instance.child_id, state=state, city=city, county=county)
 
