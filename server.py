@@ -96,14 +96,13 @@ def register_user():
 def user_page():
   """Show user's tracking-page."""
 # TODO: Remove ability to access this page if not logged in
-  if 'email' not in session:
-    return redirect("/")
 
   if 'email' in session:
     user = crud.get_user_by_email(session['email'])
     # session["email"] = email
 
-  return render_template('tracking-page.html', user=user)
+    return render_template('tracking-page.html', user=user)
+  return redirect('/')
   
 
 
@@ -117,6 +116,7 @@ def submit_login_form():
   if user == None:
     flash('''An account for this email doesn't exist yet.
               Please create a new account.''')
+    return redirect('/')
   elif password != user.password:
     flash('Wrong password. Please try again.')
     return redirect('/')
@@ -125,7 +125,7 @@ def submit_login_form():
     flash('Logged in!')
     session['email'] = user.email
 
-  return redirect('/tracking-page')
+    return redirect('/tracking-page')
 
 @app.route('/logout')
 def logout():

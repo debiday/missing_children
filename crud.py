@@ -7,8 +7,18 @@
 
 from model import db, Child, Location, User, Tracking, connect_to_db
 
+# <---------------------------->
 # <-- Children and Location  -->
+# <---------------------------->
+
 def create_child(fname, lname, ethnicity, missing_age, age_2021):
+    """Create and return a new child.
+    e.g.
+
+        >>>create_child(fname='Alex', lname='Jones', ethnicity='Hispanic', missing_age=2, age_2021=18)
+        <Child name=Alex Jones missing_age=2>
+    
+    """
 
     new_child = Child(fname=fname, lname=lname, ethnicity=ethnicity, missing_age=missing_age, age_2021=age_2021)
 
@@ -52,6 +62,13 @@ def get_children_current_age(num):
     return Child.query.filter_by(age_2021=num).all()
 
 
+# def get_children(age, ..., state)
+
+#     Child.query.filter(Child.age == age, .....state).al()
+
+
+
+
 # def get_dict_children():
 #     """Return a child dictionary for each child"""
 
@@ -69,7 +86,10 @@ def get_children():
 
     return Child.query.all()
 
-# <-- Users and Tracking  -->
+# <------------------------------------>
+# <-- Setting up Users and Tracking  -->
+# <------------------------------------>
+
 def create_user(email, password):
     """Create and return a new user."""
 
@@ -114,3 +134,5 @@ def get_user_by_email(email):
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
+
+

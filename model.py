@@ -22,7 +22,7 @@ class Child(db.Model):
     def __repr__(self):
         """Provide helpful representation when printed."""
 
-        return f"<Child child_id={self.child_id} name={self.fname} {self.lname}>"
+        return f"<Child name={self.fname} {self.lname} missing_age={self.missing_age} >"
 
 
 class Location(db.Model):
