@@ -1,13 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-html { overflow-y: scroll; overflow-x:hidden; }
 
 body {
-    font-size: 20px;
     font-family: 'Poppins', sans-serif;
     color: #fff;
     background-color: rgb(13, 13, 41);
   }
+
+#login-homepage form {
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+}
+
+#notes-item textarea {
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+  max-height: 100px;
+}
+
 /*---------------------------------------------------------------*/
 /* Mapbox Styling */
 /*---------------------------------------------------------------*/
@@ -19,17 +35,20 @@ body {
 /*---------------------------------------------------------------*/
 /* D3 & React Graph Styling */
 /*---------------------------------------------------------------*/
-pre {
+#d3-root pre {
   font-size: 7em;
 }
-.tick line {
+
+#d3-root .tick line {
   stroke: #C0C0BB;
 }
-.tick text {
+
+#d3-root .tick text {
   fill: #635F5D;
   cursor: default;
 }
-.axis-label {
+
+#d3-root.axis-label {
   font-size: 2.5em;
   fill: #635F5D;
 }
@@ -60,7 +79,7 @@ registration body {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+#registration-form input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -69,13 +88,13 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+#registration-form input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 /* Overwrite default styles of hr */
-hr {
+#registration-form hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
@@ -112,132 +131,137 @@ a {
 /*---------------------------------------------------------------*/
 
 #tracking-form html, body {
-min-height: 100%;
+  min-height: 100%;
 }
-body, div, form, input, select, p { 
-padding: 0;
-margin: 0;
-outline: none;
-font-family: Poppins, Arial, sans-serif;
-font-size: 14px;
-color: #666;
-line-height: 22px;
+
+#tracking-form h1{
+  color: #666;
+}
+
+#tracking-form body, div, form, input, select, p { 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Poppins, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
 }
 
 #tracking-form h1 {
-margin: 15px 0;
-font-weight: 400;
+  margin: 15px 0;
+  font-weight: 400;
 }
 
 #tracking-form .testbox {
-display: flex;
-justify-content: center;
-align-items: center;
-height: inherit;
-padding: 3px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: inherit;
+  padding: 30px;
 }
 
 #tracking-form form {
-width: 100%;
-padding: 20px;
-background: #fff;
-box-shadow: 0 2px 5px #ccc; 
+  width: 30%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc; 
 }
 
 #tracking-form input, select, textarea {
-margin-bottom: 10px;
-border: 1px solid #ccc;
-border-radius: 3px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 #tracking-form input {
-width: calc(100% - 10px);
-padding: 5px;
+  width: calc(100% - 10px);
+  padding: 5px;
 }
 
 #tracking-form select {
-width: 100%;
-padding: 7px 0;
-background: transparent;
+  width: 100%;
+  padding: 7px 0;
+  background: transparent;
 }
 
 #tracking-form textarea {
-width: calc(100% - 6px);
+  width: calc(100% - 6px);
 }
 
 #tracking-form .item {
-position: relative;
-margin: 10px 0;
+  position: relative;
+  margin: 10px 0;
 }
 
 #tracking-form .item:hover p, .item:hover i {
-color: #095484;
+  color: #095484;
 }
 
 #tracking-form input:hover, select:hover, textarea:hover {
-box-shadow: 0 0 5px 0 #095484;
+  box-shadow: 0 0 5px 0 #095484;
 }
 
 #tracking-form input[type="date"]::-webkit-inner-spin-button {
-display: none;
+  display: none;
 }
 
 #tracking-form input[type="time"]::-webkit-inner-spin-button {
-margin: 2px 22px 0 0;
+  margin: 2px 22px 0 0;
 }
 
 #tracking-form .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-position: absolute;
-font-size: 20px;
-color: #a9a9a9;
+  position: absolute;
+  font-size: 20px;
+  color: #a9a9a9;
 }
 
 #tracking-form .item i {
-right: 1%;
-top: 30px;
-z-index: 1;
+  right: 1%;
+  top: 30px;
+  z-index: 1;
 }
 
 #tracking-form [type="date"]::-webkit-calendar-picker-indicator {
-right: 0;
-z-index: 2;
-opacity: 0;
-cursor: pointer;
+  right: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
 }
 
 #tracking-form .btn-block {
-margin-top: 20px;
-text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 #tracking-form button {
-width: auto;
-padding: 10px;
-border: none;
--webkit-border-radius: 5px; 
--moz-border-radius: 5px; 
-border-radius: 5px; 
-background-color: #095484;
-font-size: 16px;
-color: #fff;
-cursor: pointer;
+  width: auto;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #095484;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 }
 
 #tracking-form button:hover {
-background-color: #0666a3;
+  background-color: #0666a3;
 }
 
 #tracking-form @media (min-width: 568px) {
 .name-item, .city-item {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #tracking-form .name-item input, .city-item input {
-width: calc(50% - 20px);
+  width: calc(50% - 20px);
 }
 
 #tracking-form .city-item select {
-width: calc(50% - 8px);
+  width: calc(50% - 8px);
 }

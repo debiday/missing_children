@@ -176,7 +176,7 @@
       )
     );
   };
-  const rootElement = document.getElementById('root');
+  const rootElement = document.getElementById('d3-root');
   ReactDOM.render(React$1__default.createElement( App, null ), rootElement);
 
 }(React, ReactDOM, d3));

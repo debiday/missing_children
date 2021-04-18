@@ -13,22 +13,22 @@
     <title>Tracking form</title>
   </head>
   <body>
-    <div class="testbox">
+    <div class="headerbox">
       <form action="/">
         <h1>Tracking Form</h1>
-        <div class="item">
+        <div class="name-search">
           <p>Child's Name</p>
-          <div class="name-item">
-            <input type="text" name="name" placeholder="First name" />
-            <input type="text" name="name" placeholder="Last name" />
-          </div>
+            <input type="text" name="lname" placeholder="First name" />
+            <input type="text" name="fname" placeholder="Last name" />
         </div>
-        <div class="item">
+
+
+        <div class="location-search">    
           <p>Location</p>
-          <input type="text" name="name" placeholder="County"/>
+          <input type="text" name="county" placeholder="County"/>
 
           <div class="state-item">
-            <select>
+            <select name="state">
                 <option value="" selected="selected">Select a State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -85,25 +85,38 @@
           </div>
         </div>
 
-        <div class="missing-age-item">
+        <div class="missing-age-search">
           <p>Missing Age</p>
           <input type="text" name="missing-age"/>
         </div>
 
-        <div class="current-age-item">
+        <div class="current-age-search">
             <p>Age in 2021</p>
             <input type="text" name="current-age"/>
           </div>
 
-        <div class="missing-date-item">
+        <div class="missing-date-search">
           <p>Missing Date</p>
-          <input type="date" name="name" data-date-format="YYYY MM DD"required/>
+          <input type="date" name="date-missing" data-date-format="YYYY MM DD"required/>
           <i class="fas fa-calendar-alt"></i>
         </div>
 
+        <h5>Total Results: {}</h5>
+
+        <div class="results-item">
+            <p>Children based on your search.</p>
+            <textarea id="results" name="results" oninput="auto_grow(this)"></textarea>
+          </div>
+          <script>
+            function auto_grow(element) {
+                element.style.height = "5px";
+                element.style.height = (element.scrollHeight)+"px";
+            }
+        </script>
+
         <div class="notes-item">
           <p>Describe your searches, and add additional notes to them.</p>
-          <textarea rows="10"></textarea>
+          <textarea rows="10" name="notes-item" oninput="auto_grow(this)" ></textarea>
         </div>
         <div class="btn-block">
           <button type="submit" href="/">Log search</button>

@@ -8,7 +8,7 @@
 from model import db, Child, Location, User, Tracking, connect_to_db
 
 # <--------------------------------------------------------------->
-# <Children and Location Objects>
+# <Children, Location and Note Objects>
 # <--------------------------------------------------------------->
 
 def create_child(fname, lname, ethnicity, date_missing,missing_age, age_2021):
@@ -35,7 +35,17 @@ def create_location(child_id, state, city, county):
     db.session.add(new_location)
     db.session.commit()
 
-    return new_location    
+    return new_location 
+    
+# TODO: Create an update notes function?
+def update_note(note):
+
+    new_note = Users(child_id=child_id, state=state, city=city, county=county)
+
+    db.session.add(new_location)
+    db.session.commit()
+
+    return new_location      
 
 # <--------------------------------------------------------------->
 # <Children and Location Queries>
@@ -65,7 +75,6 @@ def get_child_by_county(county):
     return Location.query.filter_by(county=county).all()
 
 
-
 def get_children_by_state(state):
     """Return number of children by state."""
 
@@ -84,13 +93,10 @@ def get_children_current_age(num):
     return Child.query.filter_by(age_2021=num).all()
 
 
+def get_children_date_missing(date):
+    """Return children by date missing in format yyyy-mm-dd"""
 
-
-# def get_children(age, ..., state)
-
-#     Child.query.filter(Child.age == age, .....state).al()
-
-
+    return Child.query.filter_by(date_missing=date).all()
 
 
 # def get_dict_children():

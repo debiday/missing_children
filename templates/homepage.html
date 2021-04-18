@@ -7,6 +7,7 @@
 <!--------------------------------------------------------------->
 <!-- Login  -->
 <!--------------------------------------------------------------->
+<div id="login-homepage">
 <form action="/login" id="login-form" method="POST">
     <input type="text" name="email" id="email-field" class="login-email-field" placeholder="Email">
     <input type="password" name="password" id="password" class="login-form" placeholder="Password">
@@ -16,6 +17,7 @@
 <form action="/registration">
 <input type="submit" value="Register" id="register-form">
 </form>
+</div>
 
 <!--------------------------------------------------------------->
 <!-- Mapbox  -->
@@ -66,7 +68,7 @@ style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 <!--------------------------------------------------------------->
 <!--D3 and React Graph  -->
 <!--------------------------------------------------------------->
-<div id="root"></div>
+<div id="d3-root"></div>
 <script src="/static/js/graph/bundle.js"></script>
 <script src="https://unpkg.com/react@16.9.0/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"></script>
