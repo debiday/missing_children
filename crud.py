@@ -36,7 +36,7 @@ def create_location(child_id, state, city, county):
     db.session.commit()
 
     return new_location 
-    
+
 # TODO: Create an update notes function?
 def update_note(note):
 
@@ -81,16 +81,16 @@ def get_children_by_state(state):
     return Location.query.filter(Location.state == state).all()
 
 
-def get_children_by_age(num):
+def get_children_by_age(missing_age):
     """Return children by missing age."""
 
-    return Child.query.filter_by(missing_age=num).all()
+    return Child.query.filter_by(missing_age=missing_age).all()
 
 
-def get_children_current_age(num):
+def get_children_current_age(age_2021):
     """Return children by current age."""
 
-    return Child.query.filter_by(age_2021=num).all()
+    return Child.query.filter_by(age_2021=age_2021).all()
 
 
 def get_children_date_missing(date):
@@ -159,8 +159,35 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
+# <--------------------------------------------------------------->
+# <Search results>
+# <--------------------------------------------------------------->
+
+def search_db(query_terms):
+    """Query database and return a list of 
+       children who fit the search terms.(dict format?))"""
+
+    new_search = Child.query
+    if query_terms.get('fname'):
+        new_query = get_child_by_fname(fname)
+    if query_terms.get('lname'):
+        new_query = get_child_by_lname(lname)
+    if query_terms.get('county'):
+        new_query = get_child_by_county(county)
+    if query_terms.get('state'):
+        new_query = get_children_by_state(state)
+    if query_terms.get('missing_age'):
+        new_query = get_children_by_age(missing_age)
+    if query_terms.get('age_2021'):
+        new_query = get_children_current_age(age_2021)
+    if query_terms.get('date_missing'):
+        new_query = get_children_date_missing(date_missing)
+        
+    
 
 
+
+# <--------------------------------------------------------------->
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)

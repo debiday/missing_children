@@ -66,7 +66,7 @@ def same_age():
 
 
 # <!--------------------------------------------------------------->
-# <--Routes for user and tracking -->
+# <--Routes for User -->
 # <!--------------------------------------------------------------->
 @app.route('/registration')
 def show_registration():
@@ -79,7 +79,7 @@ def show_registration():
 @app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""
-
+# TODO: Verify email format
   email = request.form.get('email')
   password = request.form.get('password')
 
@@ -93,21 +93,7 @@ def register_user():
     flash('Your account has been created! Please log in.')
 
   return redirect('/')
-
-
-@app.route('/tracking-page')
-def user_page():
-  """Show user's tracking-page."""
-# TODO: Remove ability to access this page if not logged in
-
-  if 'email' in session:
-    user = crud.get_user_by_email(session['email'])
-    # session["email"] = email
-
-    return render_template('tracking-page.html', user=user)
-  return redirect('/')
   
-
 
 @app.route('/login', methods = ['POST'])
 def submit_login_form():
@@ -130,13 +116,47 @@ def submit_login_form():
 
     return redirect('/tracking-page')
 
+
+# TODO: Make logout button
 @app.route('/logout')
 def logout():
+    """Log user out of session."""
 
-    session.pop('logged_in_user_id', None)
+    del session['email']
     flash("Successfully logged out")
         
     return redirect('/')
+
+
+# <!--------------------------------------------------------------->
+# <--Routes for Tracking -->
+# <!--------------------------------------------------------------->
+@app.route('/tracking-page')
+def user_page():
+  """Show user's tracking-page."""
+# TODO: Remove ability to access this page if not logged in
+
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    # session["email"] = email
+
+    return render_template('tracking-page.html', user=user)
+  return redirect('/')
+
+@app.route('/search')
+def search():
+  """Search database for specific children.
+    Show results matching ALL search criteria."""
+
+  fname_search = request.args.get('fname')
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     connect_to_db(app)
