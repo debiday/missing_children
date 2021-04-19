@@ -84,7 +84,7 @@ def get_children_by_state(state):
 def get_children_by_age(missing_age):
     """Return children by missing age."""
 
-    return Child.query.filter_by(missing_age=missing_age).all()
+    return Child.query.filter_by(missing_age=int(missing_age)).all()
 
 
 def get_children_current_age(age_2021):
@@ -162,29 +162,54 @@ def get_user_by_email(email):
 # <--------------------------------------------------------------->
 # <Search results>
 # <--------------------------------------------------------------->
-
+# TODO: Check that this function is working
 def search_db(query_terms):
     """Query database and return a list of 
        children who fit the search terms.(dict format?))"""
 
-    new_search = Child.query
-    if query_terms.get('fname'):
-        new_query = get_child_by_fname(fname)
-    if query_terms.get('lname'):
-        new_query = get_child_by_lname(lname)
-    if query_terms.get('county'):
-        new_query = get_child_by_county(county)
-    if query_terms.get('state'):
-        new_query = get_children_by_state(state)
-    if query_terms.get('missing_age'):
-        new_query = get_children_by_age(missing_age)
-    if query_terms.get('age_2021'):
-        new_query = get_children_current_age(age_2021)
-    if query_terms.get('date_missing'):
-        new_query = get_children_date_missing(date_missing)
-        
-    
+    new_query = []
+    # Initialize with -1 for removing dupes per no. of search criteria
+    num_query = -1
 
+    if query_terms.get('fname'):
+        num_query += 1
+        new_query += get_child_by_fname(query_terms.get('fname'))
+
+    if query_terms.get('lname'):
+        num_query += 1
+        new_query += get_child_by_lname(query_terms.get('lname'))
+
+        # print(new_query)
+    if query_terms.get('county'):
+        num_query += 1
+        new_query += get_child_by_county(query_terms.get('county'))
+
+    if query_terms.get('state'):
+        num_query += 1
+        new_query += get_children_by_state(query_terms.get('state'))
+
+    if query_terms.get('missing_age'):
+        num_query += 1
+        # print(num_query)
+        # print(query_terms.get('missing_age'))
+        new_query += get_children_by_age(int(query_terms.get('missing_age')))
+        # print(new_query)
+        # print("********")
+
+    if query_terms.get('age_2021'):
+        num_query += 1
+        new_query += get_children_current_age(query_terms.get('age_2021'))
+
+    if query_terms.get('date_missing'):
+        num_query += 1
+        new_query += get_children_date_missing(query_terms.get('date_missing'))
+    
+    print([x for x in new_query if new_query.count(x) > num_query])
+    query_children = [x for x in new_query if new_query.count(x) > num_query]
+    # uniqueChildren= set(new_query)
+    # print(uniqueChildren)
+    
+    return str(query_children[:num_query+1])
 
 
 # <--------------------------------------------------------------->

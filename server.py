@@ -79,6 +79,7 @@ def show_registration():
 @app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""
+
 # TODO: Verify email format
   email = request.form.get('email')
   password = request.form.get('password')
@@ -143,12 +144,36 @@ def user_page():
     return render_template('tracking-page.html', user=user)
   return redirect('/')
 
+# TODO: Create link from browser to db
 @app.route('/search')
 def search():
   """Search database for specific children.
     Show results matching ALL search criteria."""
 
-  fname_search = request.args.get('fname')
+  if session.get('search_query'):
+    del session['search_query'] 
+    # Clears all fields?
+
+  session['search_query'] = {'fname': request.args.get('fname'),
+                              'lname': request.args.get('lname'),
+                              'county': request.args.get('county'),
+                              'state': request.args.get('state'),
+                              'missing_age': request.args.get('missing_age'),
+                              'age_2021': request.args.get('age_2021'),
+                              'date_missing': request.args.get('date_missing')}
+
+  query_terms = {}
+  for term in session['search_query']:
+    if session['search_query'][term]:
+      query_terms[term] = session['search_query'][term]
+
+  db_matches = crud.search_db(query_terms=query_terms)
+  print("*******")
+  print(db_matches)
+
+  return db_matches
+
+
 
 
 
