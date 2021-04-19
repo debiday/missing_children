@@ -165,7 +165,7 @@ def get_user_by_email(email):
 # TODO: Check that this function is working
 def search_db(query_terms):
     """Query database and return a list of 
-       children who fit the search terms.(dict format?))"""
+       children who fit the search terms."""
 
     new_query = []
     # Initialize with -1 for removing dupes per no. of search criteria
@@ -179,7 +179,6 @@ def search_db(query_terms):
         num_query += 1
         new_query += get_child_by_lname(query_terms.get('lname'))
 
-        # print(new_query)
     if query_terms.get('county'):
         num_query += 1
         new_query += get_child_by_county(query_terms.get('county'))
@@ -190,11 +189,7 @@ def search_db(query_terms):
 
     if query_terms.get('missing_age'):
         num_query += 1
-        # print(num_query)
-        # print(query_terms.get('missing_age'))
         new_query += get_children_by_age(int(query_terms.get('missing_age')))
-        # print(new_query)
-        # print("********")
 
     if query_terms.get('age_2021'):
         num_query += 1
@@ -202,15 +197,19 @@ def search_db(query_terms):
 
     if query_terms.get('date_missing'):
         num_query += 1
+        # print(num_query)
+        # print(query_terms.get('date_missing'))
         new_query += get_children_date_missing(query_terms.get('date_missing'))
+        # print(new_query)
+        # print("********")
     
     print([x for x in new_query if new_query.count(x) > num_query])
-    query_children = [x for x in new_query if new_query.count(x) > num_query]
-    # uniqueChildren= set(new_query)
-    # print(uniqueChildren)
     
-    return str(query_children[:num_query+1])
-
+    if num_query > 0:
+        query_children = [x for x in new_query if new_query.count(x) > num_query]
+        return str(query_children[:num_query+1])
+    
+    return str(new_query)
 
 # <--------------------------------------------------------------->
 if __name__ == '__main__':
