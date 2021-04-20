@@ -145,7 +145,7 @@ def user_page():
   return redirect('/')
 
 # TODO: Create link from browser to db
-@app.route('/search')
+@app.route('/search.json', methods=["POST"])
 def search():
   """Search database for specific children.
     Show results matching ALL search criteria."""
@@ -154,13 +154,15 @@ def search():
     del session['search_query'] 
     # Clears all fields?
 
-  session['search_query'] = {'fname': request.args.get('fname'),
-                              'lname': request.args.get('lname'),
-                              'county': request.args.get('county'),
-                              'state': request.args.get('state'),
-                              'missing_age': request.args.get('missing_age'),
-                              'age_2021': request.args.get('age_2021'),
-                              'date_missing': request.args.get('date_missing')}
+  session['search_query'] = {'fname': request.form.get('fname'),
+                              'lname': request.form.get('lname'),
+                              'county': request.form.get('county'),
+                              'state': request.form.get('state'),
+                              'missing_age': request.form.get('missing_age'),
+                              'age_2021': request.form.get('age_2021'),
+                              'date_missing': request.form.get('date_missing')}
+
+# History table that includes the user_id, time stamp, string 250? Maybe json array?
 
   query_terms = {}
   for term in session['search_query']:
@@ -169,9 +171,15 @@ def search():
 
   db_matches = crud.search_db(query_terms=query_terms)
   print("*******")
-  print(db_matches)
+  print(type(db_matches))
 
-  return db_matches
+# TODO: Print something to screen
+  # db_matches_dict = {}
+  # for child in db_matches:
+  #   db_matches_dict[child.child_id] = {'fname': child.fname, 
+  #                                     'lname': child.lname}
+
+  return jsonify(db_matches)
 
 
 
