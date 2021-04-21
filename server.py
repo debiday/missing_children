@@ -33,6 +33,8 @@ def same_age():
 
   child_info= {}
   child_info_list_all = ""
+  child_info_list = ""
+
 
   if age.isdigit():
     children = crud.get_children_current_age(age)
@@ -61,7 +63,6 @@ def same_age():
     # for child in children:
     #   child_info = { "fname":child.fname, 
     #                 "age":child.age_2021 }
-
   return child_info_list
 
 

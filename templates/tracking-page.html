@@ -7,28 +7,28 @@
 <p>{{ user.trackings }}</p>
 
 <!DOCTYPE html>
-<div id="tracking-form">
+<div id="tracking-form" name="tracking-form">
 <html>
   <head>
     <title>Tracking form</title>
   </head>
   <body>
     <div class="headerbox">
-      <form action="/search.json" method="POST">
+      <form id="tracking-form-test"action="/search.json" method="POST">
         <h1>Tracking Form</h1>
         <div class="name-search">
           <p>Child's Name</p>
-            <input type="text" name="fname" placeholder="First name" />
-            <input type="text" name="lname" placeholder="Last name" />
+            <input type="text" name="fname" id="fname" placeholder="First name" />
+            <input type="text" name="lname" id="lname" placeholder="Last name" />
         </div>
-
+        
 
         <div class="location-search">    
           <p>Location</p>
-          <input type="text" name="county" placeholder="County"/>
+          <input type="text" name="county" id="county" placeholder="County"/>
 
           <div class="state-item">
-            <select name="state">
+            <select name="state" id="state">
                 <option value="" selected="selected">Select a State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -87,25 +87,25 @@
 
         <div class="missing-age-search">
           <p>Missing Age</p>
-          <input type="number" name="missing_age"/>
+          <input type="number" name="missing_age" id="missing_age"/>
         </div>
 
         <div class="current-age-search">
             <p>Age in 2021</p>
-            <input type="number" name="age_2021"/>
+            <input type="number" name="age_2021" id="age_2021"/>
           </div>
 
         <div class="missing-date-search">
           <p>Missing Date</p>
-          <input type="date" name="date_missing"/>
+          <input type="date" name="date_missing" id="date_missing"/>
           <i class="fas fa-calendar-alt"></i>
         </div>
 
-        <h5>Total Results: {}</h5>
+        <div><h5>Total Results: <p id="result_num"></p></h5></div>
 
         <div class="results-item">
             <p>Children based on your search.</p>
-            <textarea id="results" name="results" oninput="auto_grow(this)"></textarea>
+            <textarea rows="12" id="results" name="results" onchange="auto_grow(this)"></textarea>
           </div>
           <script>
             function auto_grow(element) {
@@ -116,7 +116,7 @@
 
         <div class="notes-item">
           <p>Describe your searches, and add additional notes to them.</p>
-          <textarea rows="10" name="notes-item" oninput="auto_grow(this)" ></textarea>
+          <textarea id="notes" rows="12" name="notes-item" onchange="auto_grow(this)" ></textarea>
         </div>
         <div class="btn-block">
           <button type="submit" href="/">Log search</button>
@@ -127,5 +127,5 @@
 </html>
 </div>
 <script src="/static/js/tracking.js"></script>
-
+<!-- TODO: Add a clear form button -->
 {% endblock %}

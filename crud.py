@@ -76,10 +76,25 @@ def get_child_by_county(county):
 
 
 def get_children_by_state(state):
-    """Return number of children by state."""
+    """Return children location by state."""
 
     return Location.query.filter(Location.state == state).all()
 
+# <-----Returns children object rather than location object ----->
+def get_children_from_county(county):
+    """Return children by state."""
+
+    child_query = Child.query.join(Location)
+    
+    return child_query.filter(Location.county == county).all()
+
+def get_children_from_state(state):
+    """Return children by state."""
+
+    child_query = Child.query.join(Location)
+    
+    return child_query.filter(Location.state == state).all()
+# <-----Returns children object rather than location object ----->
 
 def get_children_by_age(missing_age):
     """Return children by missing age."""
@@ -181,11 +196,11 @@ def search_db(query_terms):
 
     if query_terms.get('county'):
         num_query += 1
-        new_query += get_child_by_county(query_terms.get('county'))
+        new_query += get_child_from_county(query_terms.get('county'))
 
     if query_terms.get('state'):
         num_query += 1
-        new_query += get_children_by_state(query_terms.get('state'))
+        new_query += get_children_from_state(query_terms.get('state'))
 
     if query_terms.get('missing_age'):
         num_query += 1
@@ -203,15 +218,56 @@ def search_db(query_terms):
         # print(new_query)
         # print("********")
     
-    print([x for x in new_query if new_query.count(x) > num_query])
-    
+    # <-----Special scenario for only first and last name search criteria----->
+    if query_terms.get('fname') and query_terms.get('lname'):
+        query_children = [x for x in new_query if new_query.count(x) > num_query]
+        query_children = query_children[:num_query]
+        child_result = ""
+        for child in query_children:
+            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+        return child_result
     if num_query > 0:
         query_children = [x for x in new_query if new_query.count(x) > num_query]
-        return str(query_children[:num_query+1])
-    
-    return str(new_query)
+        query_children = query_children[:num_query+1]
+        child_result = ""
+        for child in query_children:
+            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+        return child_result
+        # return str(query_children[:num_query+1])
+        # This removes duplicates from the other search queries
+    elif num_query == 0:
+        child_result = ""
+        for child in new_query:
+            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+        return child_result
+    # return str(new_query)
 
 # <--------------------------------------------------------------->
+# <Individual Child Search result>
+# <--------------------------------------------------------------->
+def get_child_by_fname_lname(str):
+    """Return children by both fname and lname"""
+    split_str = str.split()
+
+    child_bio = Child.query.filter_by(fname=str[0]).filter_by(lname=str[1]).first()
+
+    return child_bio
+
+
+
+def get_child_by_fname(fname):
+    """Return children by fname"""
+
+    return Child.query.filter_by(fname=fname).all()
+
+
+def get_child_by_lname(lname):
+    """Return children by lname"""
+
+    return Child.query.filter_by(lname=lname).all()
+
+
+# <----------------------------SETUP----------------------------------->
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
