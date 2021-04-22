@@ -224,21 +224,21 @@ def search_db(query_terms):
         query_children = query_children[:num_query]
         child_result = ""
         for child in query_children:
-            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
         return child_result
     if num_query > 0:
         query_children = [x for x in new_query if new_query.count(x) > num_query]
         query_children = query_children[:num_query+1]
         child_result = ""
         for child in query_children:
-            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
         return child_result
         # return str(query_children[:num_query+1])
         # This removes duplicates from the other search queries
     elif num_query == 0:
         child_result = ""
         for child in new_query:
-            child_result += child.fname + " " + child.lname + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
         return child_result
     # return str(new_query)
 
