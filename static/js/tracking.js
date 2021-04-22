@@ -61,13 +61,5 @@ function showSearchResult(evt) {
 // })
 
 
-
-
-
-
-
-
-
-
 $("#tracking-form").on("submit", showSearchResult);
 //$("#find-button").on("submit", showSameAge);
