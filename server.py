@@ -155,9 +155,9 @@ def search():
     del session['search_query'] 
     # Clears all fields?
 
-  session['search_query'] = {'fname': request.form.get('fname'),
-                              'lname': request.form.get('lname'),
-                              'county': request.form.get('county'),
+  session['search_query'] = {'fname': request.form.get('fname').title(),
+                              'lname': request.form.get('lname').title(),
+                              'county': request.form.get('county').title(),
                               'state': request.form.get('state'),
                               'missing_age': request.form.get('missing_age'),
                               'age_2021': request.form.get('age_2021'),

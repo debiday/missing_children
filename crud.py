@@ -230,21 +230,21 @@ def search_db(query_terms):
         query_children = query_children[:num_query]
         child_result = ""
         for child in query_children:
-            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
+            child_result += f'<p><span id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</span>' + ", missing age " + str(child.missing_age) +".</p>"
         return child_result
     if num_query > 0:
         query_children = [x for x in new_query if new_query.count(x) > num_query]
         query_children = query_children[:num_query+1]
         child_result = ""
         for child in query_children:
-            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
+            child_result += f'<p><span id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</span>' + ", missing age " + str(child.missing_age) +".</p>"
         return child_result
         # return str(query_children[:num_query+1])
         # This removes duplicates from the other search queries
     elif num_query == 0:
         child_result = ""
         for child in new_query:
-            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
+            child_result += f'<p><span id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</span>' + ", missing age " + str(child.missing_age) +".</p>"
         return child_result
     # return str(new_query)
 
