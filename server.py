@@ -100,23 +100,23 @@ def submit_login_form():
 
 
 # TODO: Make logout button
-# @app.route('/logout')
-# def logout():
-#     """Log user out of session."""
-
-#     del session['email']
-#     flash("Successfully logged out")
-        
-#     return redirect('/')
-
-
 @app.route('/logout')
 def logout():
+    """Log user out of session."""
 
-    session.pop('logged_in_user_id', None)
+    del session['email']
     flash("Successfully logged out")
         
     return redirect('/')
+
+
+# @app.route('/logout')
+# def logout():
+
+#     session.pop('logged_in_user_id', None)
+#     flash("Successfully logged out")
+        
+#     return redirect('/')
 
 
 # <!--------------------------------------------------------------->
@@ -174,9 +174,19 @@ def child_bio():
 
     return jsonify(child_bio)
 
+# <!--------------------------------------------------------------->
+# <--Routes for User Account -->
+# <!--------------------------------------------------------------->
+@app.route('/my-account')
+def user_account():
+  """Show user's account page."""
+  # Removes ability to access this page if not logged in
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    # session["email"] = email
 
-
-
+    return render_template('my-account.html', user=user)
+  return redirect('/')
 
 
 

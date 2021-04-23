@@ -7,8 +7,14 @@
 <p>{{ user.trackings }}</p>
 
 <!DOCTYPE html>
+<form action="/logout" method="get">
+  <button type="submit" >Log Out</button></form>
+
+<form action="/my-account" method="get" >
+    <button type="submit" >My Saved Searches</button></form>
+
+
 <div id="tracking-form" name="tracking-form">
-  <button type="submit" action="/logout">Log Out</button>
   <head>
     <title>Tracking form</title>
   </head>

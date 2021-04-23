@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+
+<p>{{ user.email }} you are now logged in.</p>
+<p>{{ user.trackings }}</p>
+
+<form action="/logout" method="get" >
+    <button type="submit" >Log Out</button>
+    </form>
+
+<div class="table-users" id="table-users">
+    <div class="header">Missing Children Notes</div>
+
+    
+    <table cellspacing="0">
+       <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Search Queries</th>
+          <th width="400">Notes</th>
+       </tr>
+ 
+       <tr>
+          <td>0000000</td>
+          <td>0000000</td>
+          <td>01 800 2000</td>
+          <td width="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
+       </tr>
+ 
+       <tr>
+          <td>0000000</td>
+          <td>0000000</td>
+          <td>01 800 2000</td>
+          <td>Blanditiis, aliquid numquam iure voluptatibus ut maiores explicabo ducimus neque, nesciunt rerum perferendis, inventore.</td>
+       </tr>
+ 
+       <tr>
+          <td>0000000</td>
+          <td>0000000</td>
+          <td>01 800 2000</td>
+          <td> Culpa praesentium unde pariatur fugit eos recusandae voluptas.</td>
+       </tr>
+       
+       <tr>
+          <td>0000000</td>
+          <td>0000000</td>
+          <td>01 800 2000</td>
+          <td>Aut voluptatum accusantium, eveniet, sapiente quaerat adipisci consequatur maxime temporibus quas, dolorem impedit.</td>
+       </tr>
+    </table>
+    <!-- <button type="submit" action="/logout">Log Out</button> -->
+ </div>
+
+{% endblock %}

@@ -42,7 +42,7 @@ def update_note(note):
 
     new_note = Users(child_id=child_id, state=state, city=city, county=county)
 
-    db.session.add(new_location)
+    db.session.add(new_note)
     db.session.commit()
 
     return new_location      
