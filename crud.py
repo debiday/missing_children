@@ -6,6 +6,7 @@
 
 
 from model import db, Child, Location, User, Tracking, connect_to_db
+from datetime import datetime
 
 # <--------------------------------------------------------------->
 # <Children, Location and Note Objects>
@@ -152,10 +153,10 @@ def create_user(email, password):
     return new_user
 
 
-def create_tracking(user_id, child_id, note):
+def create_tracking(user_id, child_id, notes, date_created=datetime.today()):
     """Create and return a new tracking."""
 
-    new_tracking = Tracking(user_id=user_id, child_id=child_id, note=note)
+    new_tracking = Tracking(user_id=user_id, child_id=child_id, date_created=date_created, notes=notes)
 
     db.session.add(new_tracking)
     db.session.commit()

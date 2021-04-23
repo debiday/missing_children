@@ -188,6 +188,13 @@ def user_account():
     return render_template('my-account.html', user=user)
   return redirect('/')
 
+@app.route('/save-tracking')
+def save_tracking():
+  """Saves user notes to their account"""
+  new_tracking = crud.create_tracking()
+
+  return redirect('/tracking')
+
 
 
 

@@ -72,7 +72,8 @@ class Tracking(db.Model):
     tracking_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
     child_id = db.Column(db.Integer, db.ForeignKey('children.child_id'), nullable=False)
-    note = db.Column(db.String(2000), nullable=True)
+    notes = db.Column(db.String(2000), nullable=True)
+    date_time = db.Column(db.String(50), nullable=False )
 
     user = db.relationship('User', backref = 'trackings')
     child = db.relationship('Child', backref = 'trackings')

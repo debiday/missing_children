@@ -36,31 +36,9 @@ function showSearchResult(evt) {
         $('#result_num').html(total_results);
         $('#results').html(response);
         $(".child_bio").on("click", showBioResult);
+        $("#save-search").on("click", saveTracking);
     });
 }
-
-
-
-// $('#tracking-form-test').on('submit', (evt) => {
-//     evt.preventDefault();
-
-//     const childFormInputs = {'fname': $('#fname').val(),
-//                             'lname': $('#lname').val(),
-//                             'county':  $('#county').val(),
-//                             'state':  $('#state').val(),
-//                             'missing_age':  $('#missing_age').val(),
-//                             'age_2021':  $('#age_2021').val(),
-//                             'date_missing':  $('#date_missing').val()
-//     };
-
-//     $.post('/search.json', childFormInputs, (res) => {
-//         console.log("**************")
-//         console.log(res)
-
-//         $('#results').html(res);
-// });
-// })
-
 
 $("#tracking-form").on("submit", showSearchResult);
 //$("#find-button").on("submit", showSameAge);

@@ -41,4 +41,3 @@ function showBioResult(evt) {
 
 // This is happening after the elements are loaded on the page in tracking.js instead
 // $(".child_bio").on("click", showBioResult);
-//$("#find-button").on("submit", showSameAge);

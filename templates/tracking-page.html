@@ -3,15 +3,16 @@
 {% block title %}Tracking Page{% endblock %}
 
 {% block body %}
-<p>{{ user.email }} you are now logged in.</p>
-<p>{{ user.trackings }}</p>
+<p><h4>{{ user.email }} you are now logged in.</h4></p>
+<p><h1>{{ user.trackings }}🕵🏻‍♂️</h1></p>
+<!-- TODO: Random choice of detective icons :> -->
 
 <!DOCTYPE html>
 <form action="/logout" method="get">
-  <button type="submit" >Log Out</button></form>
+  <button type="submit">Log Out</button></form>
 
 <form action="/my-account" method="get" >
-    <button type="submit" >My Saved Searches</button></form>
+    <button type="submit">My Saved Searches</button></form>
 
 
 <div id="tracking-form" name="tracking-form">
@@ -20,7 +21,7 @@
   </head>
   <body>
     <div class="headerbox">
-      <form id="tracking-form-test" action="/search.json" method="POST">
+      <form id="tracking-form" action="/search.json" method="POST">
         <h1>Tracking Form</h1>
         <div class="name-search">
           <p>Child's Name</p>
@@ -129,12 +130,14 @@
         <div class="btn-block">
           <button type="submit" href="/">Search</button>
           <button type="reset" href="/">Reset</button>
-          <button type="submit" href="/">Save</button>
         </div>
+        <form action="/save-tracking" method="get">
+        <button id="save-search" type="submit" href="/">Save</button></form>
       </form>
     </div>
   </body>
 </div>
 <script src="/static/js/child_bio.js"></script>
 <script src="/static/js/tracking.js"></script>
+<script src="/static/js/save_tracking.js"></script>
 {% endblock %}
