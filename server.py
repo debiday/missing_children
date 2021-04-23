@@ -17,13 +17,6 @@ def show_homepage():
 
     return render_template("homepage.html")
 
-# @app.route('/test')
-# def all_children():
-#     """View all children."""
-
-#     children = crud.get_children()
-
-#     return render/_template('test.html', children=children)
 
 @app.route('/age')
 def same_age():
@@ -52,17 +45,6 @@ def same_age():
   else:
     print("Please enter a number.")
 
-
-    # for i, child in enumerate(children):
-    #   for i in range(len(children)):
-    #     child_info = { "fname":child.fname, 
-    #                 "age":child.age_2021 }
-
-    #     child_info_list += child_info.fname + "\n"
-
-    # for child in children:
-    #   child_info = { "fname":child.fname, 
-    #                 "age":child.age_2021 }
   return child_info_list
 
 
@@ -76,12 +58,10 @@ def show_registration():
     return render_template("registration.html")
 
 
-
 @app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""
-
-# TODO: Verify email format
+  
   email = request.form.get('email')
   password = request.form.get('password')
 
@@ -120,11 +100,20 @@ def submit_login_form():
 
 
 # TODO: Make logout button
+# @app.route('/logout')
+# def logout():
+#     """Log user out of session."""
+
+#     del session['email']
+#     flash("Successfully logged out")
+        
+#     return redirect('/')
+
+
 @app.route('/logout')
 def logout():
-    """Log user out of session."""
 
-    del session['email']
+    session.pop('logged_in_user_id', None)
     flash("Successfully logged out")
         
     return redirect('/')
@@ -136,14 +125,14 @@ def logout():
 @app.route('/tracking-page')
 def user_page():
   """Show user's tracking-page."""
-# TODO: Remove ability to access this page if not logged in
-
+  # Removes ability to access this page if not logged in
   if 'email' in session:
     user = crud.get_user_by_email(session['email'])
     # session["email"] = email
 
     return render_template('tracking-page.html', user=user)
   return redirect('/')
+
 
 # TODO: Create link from browser to db
 @app.route('/search.json', methods=["POST"])
@@ -153,7 +142,6 @@ def search():
 
   if session.get('search_query'):
     del session['search_query'] 
-    # Clears all fields?
 
   session['search_query'] = {'fname': request.form.get('fname').title(),
                               'lname': request.form.get('lname').title(),
@@ -174,13 +162,8 @@ def search():
   print("*******")
   print(type(db_matches))
 
-# TODO: Print something to screen
-  # db_matches_dict = {}
-  # for child in db_matches:
-  #   db_matches_dict[child.child_id] = {'fname': child.fname, 
-  #                                     'lname': child.lname}
-
   return jsonify(db_matches)
+
 
 @app.route('/child_bio', methods=['POST'])
 def child_bio():
