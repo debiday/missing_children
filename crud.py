@@ -80,6 +80,12 @@ def get_children_by_state(state):
 
     return Location.query.filter(Location.state == state).all()
 
+def get_location_by_id(child_id):
+    """Return location details by id number."""
+
+    return Location.query.get(child_id)
+
+
 # <-----Returns children object rather than location object ----->
 def get_children_from_county(county):
     """Return children by state."""
@@ -224,30 +230,30 @@ def search_db(query_terms):
         query_children = query_children[:num_query]
         child_result = ""
         for child in query_children:
-            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
         return child_result
     if num_query > 0:
         query_children = [x for x in new_query if new_query.count(x) > num_query]
         query_children = query_children[:num_query+1]
         child_result = ""
         for child in query_children:
-            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
         return child_result
         # return str(query_children[:num_query+1])
         # This removes duplicates from the other search queries
     elif num_query == 0:
         child_result = ""
         for child in new_query:
-            child_result += f'<a href="/">{child.fname} {child.lname}</a>' + ", missing age " + str(child.missing_age) +".\n"
+            child_result += f'<p id="{child.child_id}" class="child_bio">{child.fname} {child.lname}</p>' + ", missing age " + str(child.missing_age) +"."
         return child_result
     # return str(new_query)
 
 # <--------------------------------------------------------------->
 # <Individual Child(href) Search Results>
 # <--------------------------------------------------------------->
-def get_child_by_fname_lname(str):
+def get_child_by_fname_lname(fullname):
     """Return children by both fname and lname"""
-    split_str = str.split(" ")
+    split_str = fullname.split(" ")
 
     child_bio = Child.query.filter_by(fname=split_str[0]).filter_by(lname=split_str[1]).first()
     child_bio_full = {
@@ -277,19 +283,24 @@ def get_child_by_fname_lname(str):
     # print(all_info)
     return all_info
 
+def get_child_bio_by_id(child_id):
+    """Returns child bio by child_id"""
+    child = get_child_by_id(child_id)
+    location = get_location_by_id(child_id)
 
+    child_bio_full = {
+                    'fname': child.fname, 
+                    'lname': child.lname,
+                    'date_missing': child.date_missing,
+                    'missing_age': child.missing_age,
+                    'age_2021': child.age_2021,
+                    'child_id': child.child_id,
+                    'city': location.city,
+                    'county': location.county,
+                    'state': location.state
+                    }
 
-def get_child_by_fname(fname):
-    """Return children by fname"""
-
-    return Child.query.filter_by(fname=fname).all()
-
-
-def get_child_by_lname(lname):
-    """Return children by lname"""
-
-    return Child.query.filter_by(lname=lname).all()
-
+    return child_bio_full
 
 # <----------------------------SETUP----------------------------------->
 if __name__ == '__main__':

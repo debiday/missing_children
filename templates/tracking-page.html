@@ -104,9 +104,11 @@
         <div><h5>Total Results: <p id="result_num"></p></h5></div>
 
         <div class="results-item">
-            <p>Children based on your search.</p>
+            <p>Missing children based on your search:</p>
+            <br>
             <div rows="12" id="results" name="results" onchange="auto_grow(this)"></div>
           </div>
+          <br>
           <script>
             function auto_grow(element) {
                 element.style.height = "5px";
@@ -114,9 +116,9 @@
             }
         </script>
 
-        <div class="notes-item">
-          <p>Describe your searches, and add additional notes to them.</p>
-          <textarea id="notes" rows="12" name="notes-item" onchange="auto_grow(this)" ></textarea>
+        <div class="notes">
+          <p>Information about the child.</p>
+          <textarea id="notes" rows="12" name="notes" onchange="auto_grow(this)" ></textarea>
         </div>
         <div class="btn-block">
           <button type="submit" href="/">Log search</button>
@@ -126,6 +128,7 @@
   </body>
 </html>
 </div>
+<script src="/static/js/child_bio.js"></script>
 <script src="/static/js/tracking.js"></script>
 <!-- TODO: Add a clear form button -->
 {% endblock %}

@@ -182,8 +182,14 @@ def search():
 
   return jsonify(db_matches)
 
+@app.route('/child_bio', methods=['POST'])
+def child_bio():
+    """Show details on a particular exercise"""
+  
+    child_id = request.form.get('child_id')
+    child_bio = crud.get_child_bio_by_id(child_id)
 
-
+    return jsonify(child_bio)
 
 
 

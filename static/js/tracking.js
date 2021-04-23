@@ -35,6 +35,7 @@ function showSearchResult(evt) {
         // const children = [];
         $('#result_num').html(total_results);
         $('#results').html(response);
+        $(".child_bio").on("click", showBioResult);
     });
 }
 
