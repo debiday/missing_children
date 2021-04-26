@@ -152,7 +152,7 @@ def create_user(email, password):
 
     return new_user
 
-# TODO: Fix and link tracking CRUD
+# TODO: Fix and link tracking CRUD(fixed)
 def create_tracking(user_id, child_id, note, date_created=datetime.today()):
     """Create and return a new tracking."""
 
@@ -181,20 +181,13 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
-# TODO: Fix get user id by email, join tracking table
+# TODO: Fix get user id by email, join tracking table(fixed)
 def get_user_id_by_email(email):
     """Return a user id by email."""
 
     user_query = Tracking.query.join(User)
 
     return user_query.filter(User.email == email).all()
-
-    # def get_children_from_county(county):
-    # """Return children by state."""
-
-    # child_query = Child.query.join(Location)
-    
-    # return child_query.filter(Location.county == county).all()
 
 # <--------------------------------------------------------------->
 # <Search results>
