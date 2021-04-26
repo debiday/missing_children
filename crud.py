@@ -152,11 +152,11 @@ def create_user(email, password):
 
     return new_user
 
-# TODO: Fix and link tracking CRUD(fixed)
-def create_tracking(user_id, child_id, note, date_created=datetime.today()):
+# TODO: Fix and link tracking CRUD(fixed but not updating db)
+def create_tracking(user_id, child_id, note, date_time=datetime.today()):
     """Create and return a new tracking."""
 
-    new_tracking = Tracking(user_id=user_id, child_id=child_id, date_time=date_created, note=note)
+    new_tracking = Tracking(user_id=user_id, child_id=child_id, note=note, date_time=date_time)
 
     db.session.add(new_tracking)
     db.session.commit()
@@ -260,37 +260,37 @@ def search_db(query_terms):
 # <--------------------------------------------------------------->
 # <Individual Child(href) Search Results>
 # <--------------------------------------------------------------->
-def get_child_by_fname_lname(fullname):
-    """Return children by both fname and lname"""
-    split_str = fullname.split(" ")
+# def get_child_by_fname_lname(fullname):
+#     """Return children by both fname and lname"""
+#     split_str = fullname.split(" ")
 
-    child_bio = Child.query.filter_by(fname=split_str[0]).filter_by(lname=split_str[1]).first()
-    child_bio_full = {
-                    'fname': child_bio.fname, 
-                    'lname': child_bio.lname,
-                    'date_missing': child_bio.date_missing,
-                    'missing_age': child_bio.missing_age,
-                    'age_2021': child_bio.age_2021,
-                    'child_id': child_bio.child_id
-                    }
+#     child_bio = Child.query.filter_by(fname=split_str[0]).filter_by(lname=split_str[1]).first()
+#     child_bio_full = {
+#                     'fname': child_bio.fname, 
+#                     'lname': child_bio.lname,
+#                     'date_missing': child_bio.date_missing,
+#                     'missing_age': child_bio.missing_age,
+#                     'age_2021': child_bio.age_2021,
+#                     'child_id': child_bio.child_id
+#                     }
 
-    # Get child location from child_id, accessing location table
-    location_bio = Location.query.filter_by(child_id=child_bio_full['child_id']).first()
-    location_bio_full = {
-                        'city': location_bio.city,
-                        'county': location_bio.county,
-                        'state': location_bio.state
-    }
+#     # Get child location from child_id, accessing location table
+#     location_bio = Location.query.filter_by(child_id=child_bio_full['child_id']).first()
+#     location_bio_full = {
+#                         'city': location_bio.city,
+#                         'county': location_bio.county,
+#                         'state': location_bio.state
+#     }
 
-    all_info = f"Name: {child_bio_full['fname']} {child_bio_full['lname']}\n"\
-               f"Missing Date: {child_bio_full['date_missing']}\n"\
-               f"Missing age: {child_bio_full['missing_age']}\n"\
-               f"Current Age(2021): {child_bio_full['age_2021']}\n"\
-               f"City: {location_bio_full['city']}\n"\
-               f"County: {location_bio_full['county']}\n"\
-               f"State: {location_bio_full['state']}\n"
-    # print(all_info)
-    return all_info
+#     all_info = f"Name: {child_bio_full['fname']} {child_bio_full['lname']}\n"\
+#                f"Missing Date: {child_bio_full['date_missing']}\n"\
+#                f"Missing age: {child_bio_full['missing_age']}\n"\
+#                f"Current Age(2021): {child_bio_full['age_2021']}\n"\
+#                f"City: {location_bio_full['city']}\n"\
+#                f"County: {location_bio_full['county']}\n"\
+#                f"State: {location_bio_full['state']}\n"
+#     # print(all_info)
+#     return all_info
 
 def get_child_bio_by_id(child_id):
     """Returns child bio by child_id"""

@@ -197,11 +197,13 @@ def save_tracking():
   user_id = request.form.get('user_id')
   child_id = request.form.get('child_id')
   note = request.form.get('notes')
-  date_created = request.form.get('date')
+  date_time = request.form.get('date')
 
-  new_tracking = crud.create_tracking(user_id, child_id, note, date_created)
 
-  return redirect('/tracking')
+  new_tracking = crud.create_tracking(user_id, child_id, note, date_time)
+  # flash('Your notes have been saved! Please visit account page.')
+
+  return redirect('/tracking-page')
 
 
 

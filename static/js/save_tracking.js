@@ -40,7 +40,7 @@ function saveTracking(evt) {
     console.log(savedData['time']);
     console.log(savedData['notes']);
 
-    $.get(url, savedData, (response) => {
+    $.post(url, savedData, (response) => {
 
         console.log(response);
         // let session[table_info] = {"tracking_id": response.tracking_id,

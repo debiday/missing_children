@@ -11,45 +11,34 @@
     <button type="submit" >Log Out</button>
     </form>
 
+<ul>
+    {%for tracking in user.trackings%}
+    <!-- For each nested dictionary in the dictionary-->
+    <li>
+        <p>{{ tracking.user_id }}</p>
+    </li>
+<!-- for tracking in {{ user.trackings }}: -->
+{% endfor %}
+
+
 <div class="table-users" id="table-users">
     <div class="header">Missing Children Notes</div>
 
-    
     <table id="tracking-table" cellspacing="0">
        <tr>
           <th id="tracking_id">Tracking ID</th>
           <th id="date_time">Date Time</th>
-          <th id="search_queries">Search Queries</th>
           <th id="notes" width="400">Notes</th>
-       </tr>
- 
-       <tr>
-          <td>0000000</td>
-          <td>0000000</td>
-          <td>01 800 2000</td>
-          <td width="400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
-       </tr>
- 
-       <tr>
-          <td>0000000</td>
-          <td>0000000</td>
-          <td>01 800 2000</td>
-          <td>Blanditiis, aliquid numquam iure voluptatibus ut maiores explicabo ducimus neque, nesciunt rerum perferendis, inventore.</td>
-       </tr>
- 
-       <tr>
-          <td>0000000</td>
-          <td>0000000</td>
-          <td>01 800 2000</td>
-          <td> Culpa praesentium unde pariatur fugit eos recusandae voluptas.</td>
        </tr>
        
        <tr>
-          <td>0000000</td>
-          <td>0000000</td>
-          <td>01 800 2000</td>
-          <td>Aut voluptatum accusantium, eveniet, sapiente quaerat adipisci consequatur maxime temporibus quas, dolorem impedit.</td>
+        {%for tracking in user.trackings%}
+          <td width="200">{{ tracking.tracking_id }}</td>
+          <td width="200">{{ tracking.date_time }}</td>
+          <td width="500">{{ tracking.note }} </td>
        </tr>
+       {% endfor %}
+ 
     </table>
     <!-- <button type="submit" action="/logout">Log Out</button> -->
  </div>
