@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<p>{{ user.email }} you are now logged in.</p>
+<p id="user-email">{{ user.email }} you are now logged in.</p>
 <p>{{ user.trackings }}</p>
 
 <form action="/logout" method="get" >

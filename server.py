@@ -192,14 +192,14 @@ def user_account():
 # TODO: Add notes to current tracking
 @app.route('/save-tracking', methods=["POST"])
 def save_tracking():
-  """Saves user notes to their account"""
+  """Saves user notes to db."""
 
-  child_note = request.form.get('notes')
-  print("*************************")
-  print(child_note)
+  user_id = request.form.get('user_id')
+  child_id = request.form.get('child_id')
+  note = request.form.get('notes')
+  date_created = request.form.get('date')
 
-
-  # new_tracking = crud.create_tracking(, child_note)
+  new_tracking = crud.create_tracking(user_id, child_id, note, date_created)
 
   return redirect('/tracking')
 

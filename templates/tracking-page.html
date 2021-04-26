@@ -3,8 +3,9 @@
 {% block title %}Tracking Page{% endblock %}
 
 {% block body %}
-<p><h4>{{ user.email }} you are now logged in.</h4></p>
-<p><h1>{{ user.trackings }}🕵🏻‍♂️</h1></p>
+<p><h4><span id="user-email">{{ user.email }}</span> you are now logged in.</h4></p>
+<p><h1>{{ user.trackings }}<span id="user-id">{{ user.user_id }}</span>🕵🏻‍♂️</h1></p>
+<!-- TODO: Hide span of user id?(used for ajax) :> -->
 <!-- TODO: Random choice of detective icons :> -->
 
 <!DOCTYPE html>
@@ -129,7 +130,7 @@
           <br>
           <br>
         </div>
-        
+
 <!-- TODO: On click: reveal information and save options -->
         <form action="/save-tracking" method="post">
           <p><b>Information about the selected child.</b></p>
