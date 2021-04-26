@@ -6,18 +6,25 @@ function saveTracking(evt) {
 
     evt.preventDefault();
 
-    var today = new Date();
-    var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let today = new Date();
+    let date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const child = $('#notes').data();
+    let child_id = child.child_id;
 
     let url = "/save-tracking";
     let savedData = {
                     //  'search_queries': query_terms,
+                     'child_id': child_id,
                      'notes': $('#notes').val(),
-                     'date_time': date
-                    };
+                     'date': date,
+                     'time': time,
 
-    console.log(savedData['date_time']);
+                    };
+    
+    console.log(savedData['child_id']);
+    console.log(savedData['date']);
+    console.log(savedData['time']);
     console.log(savedData['notes']);
 
     $.get(url, savedData, (response) => {
