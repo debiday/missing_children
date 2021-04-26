@@ -188,16 +188,18 @@ def user_account():
     return render_template('my-account.html', user=user)
   return redirect('/')
 
-# @app.route('/save-tracking', methods=["POST"])
-# def save_tracking():
-#   """Saves user notes to their account"""
+@app.route('/save-tracking', methods=["POST"])
+def save_tracking():
+  """Saves user notes to their account"""
 
-#   child_note = request.form.get('notes')
-#   user_id = 
+  child_note = request.form.get('notes')
+  print("*************************")
+  print(child_note)
 
-#   new_tracking = crud.create_tracking(, child_note)
 
-#   return redirect('/tracking')
+  # new_tracking = crud.create_tracking(, child_note)
+
+  return redirect('/tracking')
 
 
 
