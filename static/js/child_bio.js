@@ -1,5 +1,5 @@
 "use strict";
-console.log("hello");
+console.log("hello bio");
 
 function showBioResult(evt) {
     console.log('hello tracking');
@@ -35,6 +35,7 @@ function showBioResult(evt) {
 
         // let all_info = response.state
 
+        $('#notes').data(childData);
         $('#notes').html(all_info);
     });
 }

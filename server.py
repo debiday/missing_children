@@ -167,7 +167,7 @@ def search():
 
 @app.route('/child_bio', methods=['POST'])
 def child_bio():
-    """Show details on a particular exercise"""
+    """Show details on a particular child"""
   
     child_id = request.form.get('child_id')
     child_bio = crud.get_child_bio_by_id(child_id)
@@ -188,12 +188,16 @@ def user_account():
     return render_template('my-account.html', user=user)
   return redirect('/')
 
-@app.route('/save-tracking')
-def save_tracking():
-  """Saves user notes to their account"""
-  new_tracking = crud.create_tracking()
+# @app.route('/save-tracking', methods=["POST"])
+# def save_tracking():
+#   """Saves user notes to their account"""
 
-  return redirect('/tracking')
+#   child_note = request.form.get('notes')
+#   user_id = 
+
+#   new_tracking = crud.create_tracking(, child_note)
+
+#   return redirect('/tracking')
 
 
 

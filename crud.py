@@ -152,11 +152,11 @@ def create_user(email, password):
 
     return new_user
 
-
-def create_tracking(user_id, child_id, notes, date_created=datetime.today()):
+# TODO: Fix and link tracking CRUD
+def create_tracking(user_id, child_id, note, date_created=datetime.today()):
     """Create and return a new tracking."""
 
-    new_tracking = Tracking(user_id=user_id, child_id=child_id, date_created=date_created, notes=notes)
+    new_tracking = Tracking(user_id=user_id, child_id=child_id, date_time=date_created, note=note)
 
     db.session.add(new_tracking)
     db.session.commit()
@@ -180,6 +180,21 @@ def get_user_by_email(email):
     """Return a user by email."""
 
     return User.query.filter(User.email == email).first()
+
+# TODO: Fix get user id by email, join tracking table
+def get_user_id_by_email(email):
+    """Return a user id by email."""
+
+    user_query = Tracking.query.join(User)
+
+    return user_query.filter(User.email == email).all()
+
+    # def get_children_from_county(county):
+    # """Return children by state."""
+
+    # child_query = Child.query.join(Location)
+    
+    # return child_query.filter(Location.county == county).all()
 
 # <--------------------------------------------------------------->
 # <Search results>

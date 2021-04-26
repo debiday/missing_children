@@ -111,7 +111,7 @@
         <div><h5>Total Results: <p id="result_num"></p></h5></div>
 
         <div class="results-item">
-            <p>Missing children based on your search:</p>
+            <p><b>Missing children based on your search:</b></p>
             <br>
             <div rows="12" id="results" name="results" onchange="auto_grow(this)"></div>
           </div>
@@ -123,15 +123,16 @@
             }
         </script>
 
-        <div class="notes">
-          <p>Information about the selected child.</p>
-          <textarea id="notes" rows="12" name="notes" onchange="auto_grow(this)" ></textarea>
-        </div>
         <div class="btn-block">
           <button type="submit" href="/">Search</button>
           <button type="reset" href="/">Reset</button>
+          <br>
+          <br>
         </div>
-        <form action="/save-tracking" method="get">
+
+        <form action="/save-tracking" method="post">
+          <p><b>Information about the selected child.</b></p>
+          <textarea id="notes" rows="12" data-child="" name="notes" onchange="auto_grow(this)"></textarea>
         <button id="save-search" type="submit" href="/">Save</button></form>
       </form>
     </div>

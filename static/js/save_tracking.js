@@ -8,26 +8,25 @@ function saveTracking(evt) {
 
     
     let url = "/save-tracking";
-    let savedData = {'tracking_id': tracking_id,
-                     'date_time': date_time,
-                     'search_queries': search_queries,
-                     'notes': notes
+    let savedData = {
+                    //  'search_queries': query_terms,
+                     'note': note
                     };
-
+    console.log(savedData[search_queries]);
     $.get(url, savedData, (response) => {
 
         console.log(response);
-        let table_info = {"tracking_id": response.tracking_id,
-                          "date_time": response.date_time,
-                          "search_queries": response.search_queries,
-                          "notes": response.notes
-                        }
+        let session[table_info] = {"tracking_id": response.tracking_id,
+                                  "date_time": response.date_time,
+                                  "search_queries": response.search_queries,
+                                  "note": response.note
+                                  }
 
         $('#tracking-id').html(table_info[tracking_id]);
         $('#date_time').html(table_info[date_time]);
         $('#search_queries').html(table_info[search_queries]);
         $('#notes').html(table_info[notes]);
-        
+        $('#notes').data('child');
     });
 }
 

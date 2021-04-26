@@ -17,6 +17,7 @@ h1 {
   color: #fff;
 }
 
+
 #notes-item textarea {
   resize: none;
   overflow: hidden;
@@ -143,6 +144,10 @@ body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, 
   font-size: 14px;
   color: #666;
   line-height: 22px;
+}
+
+span#tracking-form{
+  color: blue;
 }
 
 #tracking-form h1 {
