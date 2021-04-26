@@ -6,14 +6,20 @@ function saveTracking(evt) {
 
     evt.preventDefault();
 
-    
+    var today = new Date();
+    var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
     let url = "/save-tracking";
     let savedData = {
                     //  'search_queries': query_terms,
-                     'notes': $('#notes').val()
+                     'notes': $('#notes').val(),
+                     'date_time': date
                     };
-                    
+
+    console.log(savedData['date_time']);
     console.log(savedData['notes']);
+
     $.get(url, savedData, (response) => {
 
         console.log(response);

@@ -188,6 +188,8 @@ def user_account():
     return render_template('my-account.html', user=user)
   return redirect('/')
 
+# TODO: Make a conditional if tracking for child exists,
+# TODO: Add notes to current tracking
 @app.route('/save-tracking', methods=["POST"])
 def save_tracking():
   """Saves user notes to their account"""
