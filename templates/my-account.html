@@ -4,25 +4,15 @@
 
 {% block content %}
 
-<p id="user-email">{{ user.email }} you are now logged in.</p>
-<p>{{ user.trackings }}</p>
+<!-- <p id="user-email">{{ user.email }} you are now logged in.</p>
+<p>{{ user.trackings }}</p> -->
 
 <form action="/logout" method="get" >
     <button type="submit" >Log Out</button>
     </form>
 
-<ul>
-    {%for tracking in user.trackings%}
-    <!-- For each nested dictionary in the dictionary-->
-    <li>
-        <p>{{ tracking.user_id }}</p>
-    </li>
-<!-- for tracking in {{ user.trackings }}: -->
-{% endfor %}
-
-
 <div class="table-users" id="table-users">
-    <div class="header">Missing Children Notes</div>
+    <div class="header"><h1>Missing Children Notes</h1></div>
 
     <table id="tracking-table" cellspacing="0">
        <tr>
@@ -35,7 +25,9 @@
         {%for tracking in user.trackings%}
           <td width="200">{{ tracking.tracking_id }}</td>
           <td width="200">{{ tracking.date_time }}</td>
-          <td width="500">{{ tracking.note }} </td>
+          <td width="500"><textarea rows="5" cols="35">{{ tracking.note }}</textarea></td>
+          <td width="200"><a href="/">Update/Save</a></td>
+          <td width="200"><a href="/">Delete</a></td>
        </tr>
        {% endfor %}
  
