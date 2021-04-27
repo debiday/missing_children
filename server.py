@@ -170,16 +170,6 @@ def child_bio():
 
     return jsonify(child_bio)
 
-@app.route('/update_tracking', methods=['POST'])
-def update_tracking():
-  """Update tracking from account page"""
-  print(request.form)
-  note = request.form.get('note')
-  tracking_id = request.form.get('tracking_id')
-
-  crud.update_tracking(tracking_id, note)
-
-  return redirect('/my-account')
   
 
 # <!--------------------------------------------------------------->
@@ -212,6 +202,28 @@ def save_tracking():
   # flash('Your notes have been saved! Please visit account page.')
 
   return redirect('/tracking-page')
+
+
+@app.route('/update_tracking', methods=['POST'])
+def update_tracking():
+  """Update tracking from account page"""
+  # print(request.form)
+  note = request.form.get('note')
+  tracking_id = request.form.get('tracking_id')
+
+  crud.update_tracking(tracking_id, note)
+
+  return redirect('/my-account')
+
+@app.route('/delete_tracking', methods=['POST'])
+def delete_tracking():
+  """Delete tracking from account page"""
+
+  tracking_id = request.form.get('tracking_id')
+  crud.delete_tracking(tracking_id)
+  
+  return redirect('/my-account')
+
 
 
 

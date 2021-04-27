@@ -165,8 +165,8 @@ def create_tracking(user_id, child_id, note, date_time=datetime.today()):
     return new_tracking
 
 
-def get_note_from_tracking_id(tracking_id):
-    """Return a note based on tracking_id"""
+def get_tracking_from_tracking_id(tracking_id):
+    """Return a tracking based on tracking_id"""
 
     return Tracking.query.filter_by(tracking_id=tracking_id).first()
 
@@ -174,13 +174,24 @@ def get_note_from_tracking_id(tracking_id):
 def update_tracking(tracking_id, note):
     """Update and save a tracking in the database."""
 
-    tracking_note = get_note_from_tracking_id(tracking_id)
+    tracking_note = get_tracking_from_tracking_id(tracking_id)
     tracking_note.note = note
 
     db.session.add(tracking_note)
     db.session.commit()
 
     return tracking_note
+
+
+def delete_tracking(tracking_id):
+    """Delete a tracking object from the database."""
+
+    tracking_object = get_tracking_from_tracking_id(tracking_id)
+
+    db.session.delete(tracking_object)
+    db.session.commit()
+
+    return tracking_object
 
 
 # def update_tracking(user_id, child_id, note, date_time=datetime.today()):

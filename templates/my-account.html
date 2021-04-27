@@ -11,8 +11,14 @@
     <button type="submit" >Log Out</button>
     </form>
 
+<form action="/tracking-page" method="get" >
+    <button type="submit" >Back to tracking page</button>
+    </form>
+
+
 <div class="table-users" id="table-users">
     <div class="header"><h1>Missing Children Notes</h1></div>
+
 
     <table id="tracking-table" cellspacing="0">
        <tr>
@@ -22,18 +28,19 @@
        </tr>
        
        <tr>
-        {%for tracking in user.trackings%}
+        {%for tracking in user.trackings | sort(attribute='tracking_id', reverse = True) %}
           <td id="{{ tracking.tracking_id }}" class="tracking-id" width="200">{{ tracking.tracking_id }}</td>
           <td width="200">{{ tracking.date_time }}</td>
+
           <form action="/update_tracking" method="POST">
-          <input type="hidden" name="tracking_id" value="{{ tracking.tracking_id }}">
+          <input type="hidden" id="tracking_id" name="tracking_id" value="{{ tracking.tracking_id }}">
           <td width="350"><textarea name="note" rows="8" cols="50">{{ tracking.note }}</textarea></td>
-          <!--TODO: Create update route  -->
           <td width="200"><button type="submit">Update/Save</button></td></form>
           <!-- TODO: Create delete route -->
-          <form action="/delete_tracking" method="POST"></form>
+          <form action="/delete_tracking" method="POST">
+          <input type="hidden" name="tracking_id" value="{{ tracking.tracking_id }}">
           <td width="200"><button id="delete-tracking" type="submit">Delete</button></a></td></form>
-       </tr>
+        </tr>
        {% endfor %}
  
     </table>

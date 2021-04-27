@@ -48,7 +48,6 @@ function saveTracking(evt) {
         //                           "search_queries": response.search_queries,
         //                           "note": response.note
         //                           }
-        //add visually to html/ incrementing tables?
 
         // $('#tracking-id').html(table_info[tracking_id]);
         // $('#date_time').html(table_info[date_time]);

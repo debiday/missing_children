@@ -1,6 +1,7 @@
 """Models for children database"""
 
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 from datetime import datetime
 db = SQLAlchemy()
 
@@ -74,7 +75,7 @@ class Tracking(db.Model):
     note = db.Column(db.String(2000), nullable=True)
     date_time = db.Column(db.String(50), nullable=False )
 
-    user = db.relationship('User', backref = 'trackings', order_by="Tracking.tracking_id")
+    user = db.relationship('User', backref = 'trackings', order_by="desc(Tracking.tracking_id)")
     child = db.relationship('Child', backref = 'trackings')
 
     def __repr__(self):
