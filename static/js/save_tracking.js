@@ -55,6 +55,7 @@ function saveTracking(evt) {
         // $('#search_queries').html(table_info[search_queries]);
         // $('#notes').html(table_info[notes]);
         // $('#notes').data('child');
+    
     });
 }
 

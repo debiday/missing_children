@@ -95,6 +95,7 @@ def get_children_from_county(county):
     
     return child_query.filter(Location.county == county).all()
 
+
 def get_children_from_state(state):
     """Return children by state."""
 
@@ -162,6 +163,34 @@ def create_tracking(user_id, child_id, note, date_time=datetime.today()):
     db.session.commit()
 
     return new_tracking
+
+
+def get_note_from_tracking_id(tracking_id):
+    """Return a note based on tracking_id"""
+
+    return Tracking.query.filter_by(tracking_id=tracking_id).first()
+
+
+def update_tracking(tracking_id, note):
+    """Update and save a tracking in the database."""
+
+    tracking_note = get_note_from_tracking_id(tracking_id)
+    tracking_note.note = note
+
+    db.session.add(tracking_note)
+    db.session.commit()
+
+    return tracking_note
+
+
+# def update_tracking(user_id, child_id, note, date_time=datetime.today()):
+#     """Update and save a tracking in the database."""
+
+#     update_tracking = Tracking(user_id=user_id, child_id=child_id, note=note, date_time=date_time)
+
+#     db.session.commit()
+
+#     return update_tracking
     
 
 def get_users():

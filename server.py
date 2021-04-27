@@ -99,7 +99,7 @@ def submit_login_form():
     return redirect('/tracking-page')
 
 
-# TODO: Make logout button
+# TODO: Make logout button(update: logout warning for account page)
 @app.route('/logout')
 def logout():
     """Log user out of session."""
@@ -118,9 +118,8 @@ def logout():
         
 #     return redirect('/')
 
-
 # <!--------------------------------------------------------------->
-# <--Routes for Tracking -->
+# <--Routes for Tracking Child & Tracking Notes -->
 # <!--------------------------------------------------------------->
 @app.route('/tracking-page')
 def user_page():
@@ -134,7 +133,6 @@ def user_page():
   return redirect('/')
 
 
-# TODO: Create link from browser to db
 @app.route('/search.json', methods=["POST"])
 def search():
   """Search database for specific children.
@@ -150,8 +148,6 @@ def search():
                               'missing_age': request.form.get('missing_age'),
                               'age_2021': request.form.get('age_2021'),
                               'date_missing': request.form.get('date_missing')}
-
-# History table that includes the user_id, time stamp, string 250? Maybe json array?
 
   query_terms = {}
   for term in session['search_query']:
@@ -173,6 +169,18 @@ def child_bio():
     child_bio = crud.get_child_bio_by_id(child_id)
 
     return jsonify(child_bio)
+
+@app.route('/update_tracking', methods=['POST'])
+def update_tracking():
+  """Update tracking from account page"""
+  print(request.form)
+  note = request.form.get('note')
+  tracking_id = request.form.get('tracking_id')
+
+  crud.update_tracking(tracking_id, note)
+
+  return redirect('/my-account')
+  
 
 # <!--------------------------------------------------------------->
 # <--Routes for User Account -->

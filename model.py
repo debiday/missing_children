@@ -74,7 +74,7 @@ class Tracking(db.Model):
     note = db.Column(db.String(2000), nullable=True)
     date_time = db.Column(db.String(50), nullable=False )
 
-    user = db.relationship('User', backref = 'trackings')
+    user = db.relationship('User', backref = 'trackings', order_by="Tracking.tracking_id")
     child = db.relationship('Child', backref = 'trackings')
 
     def __repr__(self):

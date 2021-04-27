@@ -6,7 +6,7 @@
 
 <!-- <p id="user-email">{{ user.email }} you are now logged in.</p>
 <p>{{ user.trackings }}</p> -->
-
+<!-- TODO: On click: prompt to ask if user has saved changes -->
 <form action="/logout" method="get" >
     <button type="submit" >Log Out</button>
     </form>
@@ -23,16 +23,21 @@
        
        <tr>
         {%for tracking in user.trackings%}
-          <td width="200">{{ tracking.tracking_id }}</td>
+          <td id="{{ tracking.tracking_id }}" class="tracking-id" width="200">{{ tracking.tracking_id }}</td>
           <td width="200">{{ tracking.date_time }}</td>
-          <td width="500"><textarea rows="5" cols="35">{{ tracking.note }}</textarea></td>
-          <td width="200"><a href="/">Update/Save</a></td>
-          <td width="200"><a href="/">Delete</a></td>
+          <form action="/update_tracking" method="POST">
+          <input type="hidden" name="tracking_id" value="{{ tracking.tracking_id }}">
+          <td width="350"><textarea name="note" rows="8" cols="50">{{ tracking.note }}</textarea></td>
+          <!--TODO: Create update route  -->
+          <td width="200"><button type="submit">Update/Save</button></td></form>
+          <!-- TODO: Create delete route -->
+          <form action="/delete_tracking" method="POST"></form>
+          <td width="200"><button id="delete-tracking" type="submit">Delete</button></a></td></form>
        </tr>
        {% endfor %}
  
     </table>
     <!-- <button type="submit" action="/logout">Log Out</button> -->
  </div>
-
+<!-- TODO: Flash messages for update and pop up confirmation for delete-->
 {% endblock %}
