@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, flash, session, url_for, redirect
+from flask import Flask, render_template, jsonify, request, flash, session, url_for, redirect, send_from_directory
 from model import db, connect_to_db
 from jinja2 import StrictUndefined
 from markupsafe import escape
@@ -7,6 +7,11 @@ import crud
 app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # <!--------------------------------------------------------------->
 # <-- Routes for homepage -->
@@ -222,7 +227,7 @@ def delete_tracking():
   tracking_id = request.form.get('tracking_id')
   crud.delete_tracking(tracking_id)
   
-  return redirect('/my-account')
+  return redirect('/my-account') 
 
 
 

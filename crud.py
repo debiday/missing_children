@@ -13,13 +13,13 @@ from datetime import datetime
 # <--------------------------------------------------------------->
 
 def create_child(fname, lname, ethnicity, date_missing,missing_age, age_2021):
-    """Create and return a new child.
-    e.g.
+    # """Create and return a new child.
+    # e.g.
 
-        >>>create_child(fname='Alex', lname='Jones', ethnicity='Hispanic', missing_age=2, age_2021=18)
-        <Child name=Alex Jones missing_age=2>
+    #     >>>create_child(fname='Alex', lname='Jones', ethnicity='Hispanic',  missing_age=2, age_2021=18)
+    #     <Child name=Alex Jones missing_age=2>
     
-    """
+    # """
 
     new_child = Child(fname=fname, lname=lname, ethnicity=ethnicity, date_missing=date_missing, missing_age=missing_age, age_2021=age_2021)
 
@@ -53,7 +53,12 @@ def update_note(note):
 # <--------------------------------------------------------------->
 
 def get_child_by_id(child_id):
-    """Return child details by id number."""
+    """Return child details by id number.
+
+    >>> get_child_by_id(1)
+    <Child name=Katele Caldera missing_age=17 >
+    
+    """
 
     return Child.query.get(child_id)
 
