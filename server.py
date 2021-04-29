@@ -42,7 +42,7 @@ def same_age():
                        "lname": child.lname, 
                       "missing_age":child.missing_age,
                      }              
-        child_info_list = f"{child.fname} {child.lname}, {child.missing_age:.0f} years old. "
+        child_info_list = f"{child.fname} {child.lname}, {child.missing_age:.0f} years old.\n"
     # child_info= str(children)
         child_info_list_all += child_info_list
 
