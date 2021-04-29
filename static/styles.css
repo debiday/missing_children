@@ -58,7 +58,7 @@ h1 {
 
 /* Navbar links on mouse-over */
 .topnav a:hover {
-  background-color: grey;
+  background-color: #2196F3;
   color: black;
 }
 
@@ -80,6 +80,7 @@ h1 {
 
 /* Style the input field inside the navbar */
 .topnav input[type=email] {
+  border-radius: 20px;
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -88,6 +89,7 @@ h1 {
 }
 
 .topnav input[type=password] {
+  border-radius: 20px;
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -97,6 +99,7 @@ h1 {
 
 /* Style the button inside the input container */
 .topnav .login-container button {
+  border-radius: 20px;
   float: none;
   padding: 2px;
   margin-top: 8px;
@@ -110,6 +113,7 @@ h1 {
 .topnav #register-form{
   margin-top: 8px;
   padding: 0.4em;
+  background-color: lightgreen;
 }
 
 .topnav #login-form{
@@ -433,5 +437,9 @@ span#tracking-form{
   height: 60%;
   padding-left: 10%;
   padding-right: 10%;
+}
+
+.col-md-9 {
+  padding: 100px;
 }
 

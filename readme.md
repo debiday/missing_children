@@ -30,7 +30,9 @@ This project visualizes the record of children who went missing when they were 1
 
 The data is supplemented with geolocation data converted by [Geocodio](https://www.geocod.io/docs/#introduction), integrated into a Mapbox tileset and visualized with [Mapbox studio](https://docs.mapbox.com/api/overview/). The same dataset is used to generate the Age to Year Missing Graph with Gender colour legends and built with React and D3. 
 
-Lastly, more information from the [NCMEC](https://www.missingkids.org/footer/media/keyfacts#:~:text=According%20to%20the%20FBI%2C%20in,represents%20reports%20of%20missing%20children.) is used to supplement the information on both the map and graph by showing categories of children who are missing. 
+Information from the [NCMEC](https://www.missingkids.org/footer/media/keyfacts#:~:text=According%20to%20the%20FBI%2C%20in,represents%20reports%20of%20missing%20children.) is used to supplement the information on both the map and graph by showing categories of children who are missing. 
+
+To sign up as a web sleuth, users log into the app with their email and password. Users are then able to perform advanced searches through the database. Search result data is retrieved from the backend asynchronously with AJAX. With the generated results, users are able to securely save, and add notes to their searches with sessions.
 
 ### Built With
 
