@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 
+/* scroll */
+
 body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
@@ -9,6 +11,10 @@ body {
 
 #header-img-base {
   width: 100vw;
+}
+
+#flashed {
+  text-align: center;
 }
 
 #login-homepage form {
@@ -146,14 +152,20 @@ h1 {
 /*---------------------------------------------------------------*/
 /* Age Form Styling */
 /*---------------------------------------------------------------*/
+#background-age {
+  background-image: url("/static/images/background.png");
+  /* background-repeat: no-repeat; */
+}
+
 #children-age {
   width: 800px; 
-  height: 80vh;
+  height: 70vh;
   margin: auto;
   width: 60%;
   padding: 1px;
   overflow: scroll;
 }
+
 
 /*---------------------------------------------------------------*/
 /* D3 & React Graph Styling */
@@ -186,11 +198,21 @@ h1 {
 }
 
 /*---------------------------------------------------------------*/
-/* Donut pie chart styling */
+/* Google pie chart styling */
 /*---------------------------------------------------------------*/
+.google-graph {
+  float: left;
+  padding-left: 2vh;
+}
 
+.google-writeup {
+  padding-left: 3vh;
+  padding-right: 3vh;
+}
 
-
+#google-graph-area{
+  height: 100vh;
+}
 /*---------------------------------------------------------------*/
 /* Registration form styling */
 /*---------------------------------------------------------------*/
