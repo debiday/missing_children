@@ -56,7 +56,8 @@ const App = () => {
 
   const colorScale = scaleOrdinal()
     .domain(data.map(colorValue))
-    .range(['#F6B656', '#42A5B3', '#C1BAA9']);
+    .range(['#FDEDF6', '#53CAC6', '#C1BAA9']);
+
 
   return (
     <svg width={width} height={height}>

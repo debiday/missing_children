@@ -142,7 +142,7 @@
 
     const colorScale = d3.scaleOrdinal()
       .domain(data.map(colorValue))
-      .range(['#F6B656', '#42A5B3', '#C1BAA9']);
+      .range(['#fdedf6', '#53cac6', '#C1BAA9']);
 
     return (
       React$1__default.createElement( 'svg', { width: width, height: height },

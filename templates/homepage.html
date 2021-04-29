@@ -1,5 +1,5 @@
 <head>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='static/favicon.ico') }}">
+  <link rel="shortcut icon" href="/static/images/favicon.ico">
 </head>
 
 <div class="topnav">
@@ -7,9 +7,9 @@
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
   <div class="login-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Username" name="username">
-      <input type="text" placeholder="Password" name="psw">
+    <form action="/login" id="login-form" method="POST">
+      <input type="email" placeholder="Username" name="username">
+      <input type="password" placeholder="Password" name="psw">
       <button type="submit" id="login-form" value="Login">Login</button>
       </form><form action="/registration">
           <button type="submit" value="Register" id="register-form">Register</button> 
@@ -32,7 +32,7 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}TLC{% endblock %}
 
 {% block content %}
 
@@ -47,8 +47,9 @@
 				<div class="map">
 					<script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
 					<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-					
+
 					<div id='map'></div>
+          
 					<script>
 					mapboxgl.accessToken = 'pk.eyJ1IjoiZGViaWRheSIsImEiOiJja20zN3V5bXAwMDk0MnFwOTgweDh2bXY3In0.1mhCDfhwLfdgQV3kwTSSAw';
 					var map = new mapboxgl.Map({
@@ -56,6 +57,7 @@
 					style: 'mapbox://styles/debiday/ckn82w7530h0a17k9kiby8q0o'
 					});
 					</script>
+          <p style="text-align: center; width: 100%; color: lightgrey">Zoom in to find missing children from your state</p>
 					</div>
 <!--------------------------------------------------------------->
 			</div>
@@ -66,18 +68,20 @@
 <!--------------------------------------------------------------->
 <!-- Queries  -->
 <!--------------------------------------------------------------->
+      <div id="children-age">
       <form id="age-form">				
-        <label><h3>Missing children based on your age in 2021:</h3></label>
-				<input name="user-age" id="user-age" type="text">
+        <label><h3>Look up missing children who are the same age as you.</h3></label>
+        <br>
+				<input name="user-age" id="user-age" placeholder="Your age" type="text">
 				<button id="find-button" type="submit">Find</button>
 			</form>
 			
-			<div class="same-age_children"><p>The children who are the same age as you in the year 2021 are:</p></div>
+			<!-- <div class="same-age_children"><p>Children the same age as you in 2021 are:</p></div> -->
 			<div id="child-info"></div>
 			
 			
-			<p><h8>Based on NAMUS database launched in 2007.</h8></p>
-			<h10>Data accessed April 2021</h10>
+			<!-- <p><h8>Based on NAMUS database launched in 2007.</h8></p>
+			<h10>Data accessed April 2021</h10></div> -->
 			<script src="/static/js/same_age.js"></script>
 <!--------------------------------------------------------------->
 		</div>
@@ -85,24 +89,23 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="jumbotron">
-				<h2>
-					Hello, world!
+				<h2 style="text-align: center; width: 100%; color: white;">
+					Age and Gender Biases
 				</h2>
 <!--------------------------------------------------------------->
 <!--D3 and React Graph  -->
 <!--------------------------------------------------------------->
+        <div id="d3">
 					<div id="d3-root"></div>
 					<script src="/static/js/graph/bundle.js"></script>
-					<script src="https://unpkg.com/react@16.9.0/umd/react.production.min.js"></script>
-					<script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"></script>
-					<script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
+          <p>
+            <h4>While the media reports primarily on younger female children, all genders of children go missing– with a majority being older children.</h4>
+            "Law enforcement agencies entered a total of <strong>464,324</strong> missing children reports into the 2017 database of the U.S. National Crime Information Center. Although most children who go missing in the U.S. are ultimately located and returned home, each year thousands remain unrecovered."<br>
+            <a href=”https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0207742”><small>Citation</small></a> 
+          </p>
+        </div>
 <!--------------------------------------------------------------->
-					<div class="row">
-					<div class="col-md-6">
 			</div>
-			<p>
-				Something about years and children, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-			</p>
 		</div>
 	</div>
 	<div class="row">
@@ -137,6 +140,7 @@
 							'width':800,
 							'height':500,
 							'backgroundColor': '#0D0D29',
+              'colors': ['47A8BD', '1E3888', 'F5E663', 'FFAD69', '9C3848'],
 							'is3D': true
 							};
 					
@@ -153,10 +157,18 @@
 <!--------------------------------------------------------------->
 		</div>
 		<div class="col-md-4">
-			<p>
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-			</p>
-		</div>
+			<h5>In 2020 NCMEC assisted law enforcement and families with more than 29,800 cases of missing children.</h5>
+      <br>
+      <p>Case type:<p>
+      <ul>
+        <li>91 percent endangered runaways.</li>
+        <li>5 percent family abductions.</li>
+        <li>3 percent critically missing young adults, ages 18 to 20.</li>
+        <li>Less than 1 percent nonfamily abductions.</li>
+        <li>1 percent lost, injured or otherwise missing children.</li>
+      </ul>
+        <p>Of the nearly 26,500 runaways reported to NCMEC in 2020, 1 in 6 were likely victims of child sex trafficking.</p>
+      </div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">

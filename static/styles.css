@@ -72,7 +72,15 @@ h1 {
 }
 
 /* Style the input field inside the navbar */
-.topnav input[type=text] {
+.topnav input[type=email] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 200px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+.topnav input[type=password] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -128,13 +136,37 @@ h1 {
 #map {
     width: 800px; 
     height: 600px;
-    justify-content: center;
+    margin: auto;
+    width: 60%;
+    border: 3px solid grey;
+    border-radius: 30px;
+    padding: 1px;
+}
 
+/*---------------------------------------------------------------*/
+/* Age Form Styling */
+/*---------------------------------------------------------------*/
+#children-age {
+  width: 800px; 
+  height: 80vh;
+  margin: auto;
+  width: 60%;
+  padding: 1px;
+  overflow: scroll;
 }
 
 /*---------------------------------------------------------------*/
 /* D3 & React Graph Styling */
 /*---------------------------------------------------------------*/
+#d3 {
+  width: 800px; 
+  height: 80vh;
+  margin: auto;
+  width: 60%;
+  padding: 1px;
+
+}
+
 #d3-root pre {
   font-size: 7em;
 }
@@ -179,7 +211,7 @@ body#registrationform {
 }
 
 /* Full-width input fields */
-#registration-form input[type=text], input[type=password], input[type=email] {
+#registration-form input[type=email]:not(#login-form) {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -187,6 +219,16 @@ body#registrationform {
   border: none;
   background: #f1f1f1;
 }
+
+#registration-form input[type=password]:not(#login-form){
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
 
 #registration-form input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
