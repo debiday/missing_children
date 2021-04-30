@@ -2,13 +2,12 @@
 
 {% block title %}Tracking Page{% endblock %}
 
-{% block body %}
+{% block content %}
+
 <p><h4><span id="user-email">{{ user.email }}</span> you are now logged in.</h4></p>
 <p><h1>{{ user.trackings }}<span id="user-id">{{ user.user_id }}</span>🕵🏻‍♂️</h1></p>
 <!-- TODO: Hide span of user id?(used for ajax) :> -->
 <!-- TODO: Random choice of detective icons :> -->
-
-<!DOCTYPE html>
 <form action="/logout" method="get">
   <button type="submit">Log Out</button></form>
 
@@ -17,10 +16,6 @@
 
 
 <div id="tracking-form" name="tracking-form">
-  <head>
-    <title>Tracking form</title>
-  </head>
-  <body>
     <div class="headerbox">
       <form id="tracking-form" action="/search.json" method="POST">
         <h1>Tracking Form</h1>
@@ -138,7 +133,6 @@
         <button id="save-search" type="submit" href="/">Save</button></form>
       </form>
     </div>
-  </body>
 </div>
 <script src="/static/js/child_bio.js"></script>
 <script src="/static/js/tracking.js"></script>
