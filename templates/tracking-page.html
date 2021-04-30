@@ -13,20 +13,14 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<ul id="tracking-buttons" class="nav">
-				<li class="nav-item" id="tracking-page-buttons">
+			<div id="tracking-buttons" class="nav">
 					<form action="/logout" method="get">
 						<button id="tracking-top-button" type="submit">Log Out</button></form>
-				</li>
-				<li class="nav-item">
 					<form action="/my-account" method="get" >
 						<button id="tracking-top-button" type="submit">My Saved Searches</button></form>
-				</li>
-				<li class="nav-item">
 					<form action="/forum" method="get" >
 						<button id="tracking-top-button" type="submit">Forum</button></form>
-				</li>
-			</ul>
+          </div>
       <br>
 			<div class="row">
 				<div class="col-md-12">
@@ -146,6 +140,13 @@
 							  <p><b>Information about the selected child.</b></p>
 							  <textarea id="notes" rows="12" data-child="" name="notes" onchange="auto_grow(this)"></textarea>
 							<button id="save-search" type="submit" href="/">Save</button></form>
+              <!-- <--flashed--->
+              </div>
+              {% for msg in get_flashed_messages() %}
+              <p class="flash-msg">
+                {{ msg }}
+              </p>
+              {% endfor %}
 						  </form>
 						</div>
 					</div>
@@ -157,6 +158,7 @@
 		</div>
 	</div>
 </div>
+<!-- <--flashed--->
 {% for msg in get_flashed_messages() %}
 <p class="flash-msg">
   {{ msg }}

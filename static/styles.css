@@ -111,10 +111,8 @@ h1 {
 }
 
 #tracking-page-buttons {
-  padding-left: 36%;
   font-size: 17px;
   border-radius: 20px;
-
 }
 
 .topnav #register-form{
@@ -212,13 +210,21 @@ h1 {
 /*---------------------------------------------------------------*/
 /* Google pie chart styling */
 /*---------------------------------------------------------------*/
+#google-graph-area{
+  padding-left: 5vh;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .google-graph {
-  float: left;
-  padding-left: 15vh;
+  padding-left: 9vh;
 }
 
 .google-writeup {
-  padding-left: 20vh;
+  float: right;
+  padding-left: 17vh;
 }
 
 /*---------------------------------------------------------------*/
@@ -310,12 +316,19 @@ body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, 
   margin: 2000;
   outline: none;
   font-family: Poppins, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   color: #666;
   line-height: 22px;
 }
 
+#tracking-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #tracking-top-button {
+    font-weight: bold;
     margin: 15px;
     width: auto;
     padding: 10px;
@@ -411,6 +424,7 @@ span:not(#user-email){
 }
 
 #tracking-form button {
+  font-weight: bold;
   width: auto;
   padding: 10px;
   border: none;
@@ -418,7 +432,7 @@ span:not(#user-email){
   -moz-border-radius: 5px; 
   border-radius: 5px; 
   background-color: #095484;
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   cursor: pointer;
 }

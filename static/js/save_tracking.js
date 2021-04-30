@@ -33,28 +33,10 @@ function saveTracking(evt) {
                     //  'email': email
                     };
 
-    console.log("**********")
-    console.log(user_id)
-    console.log(savedData['child_id']);
-    console.log(savedData['date']);
-    console.log(savedData['time']);
-    console.log(savedData['notes']);
-
     $.post(url, savedData, (response) => {
 
-        console.log(response);
-        // let session[table_info] = {"tracking_id": response.tracking_id,
-        //                           "date_time": response.date_time,
-        //                           "search_queries": response.search_queries,
-        //                           "note": response.note
-        //                           }
+        alert(response);
 
-        // $('#tracking-id').html(table_info[tracking_id]);
-        // $('#date_time').html(table_info[date_time]);
-        // $('#search_queries').html(table_info[search_queries]);
-        // $('#notes').html(table_info[notes]);
-        // $('#notes').data('child');
-    
     });
 }
 

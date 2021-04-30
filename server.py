@@ -206,7 +206,8 @@ def save_tracking():
   if new_tracking:
     flash("Your notes have been saved in your saved searches.")
 
-  return redirect('/tracking-page')
+  return "Your notes have been saved in your saved searches."
+  # return redirect('/tracking-page')
 
 
 @app.route('/update_tracking', methods=['POST'])
