@@ -110,6 +110,13 @@ h1 {
   cursor: pointer;
 }
 
+#tracking-page-buttons {
+  padding-left: 36%;
+  font-size: 17px;
+  border-radius: 20px;
+
+}
+
 .topnav #register-form{
   margin-top: 8px;
   padding: 0.4em;
@@ -289,15 +296,18 @@ body#registrationform {
 /*---------------------------------------------------------------*/
 /* Tracking form styling */
 /*---------------------------------------------------------------*/
-
-#tracking-form html, body {
-  min-height: 100%;
+#container-fluid {
+  background-image: url("/static/images/mg.png");
 }
 
-
 body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, select#tracking-form, p#tracking-form { 
-  padding: 0;
-  margin: 0;
+  background-image: url("/static/images/mg.png");
+  background-repeat: no-repeat;
+  background-position: 80% 30%;
+  border-radius: 30px;
+  padding-left: 20%;
+  padding-right: 30%;
+  margin: 2000;
   outline: none;
   font-family: Poppins, Arial, sans-serif;
   font-size: 14px;
@@ -305,7 +315,21 @@ body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, 
   line-height: 22px;
 }
 
-span#tracking-form{
+#tracking-top-button {
+    margin: 15px;
+    width: auto;
+    padding: 10px;
+    border: none;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    background-color: #095484;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+span:not(#user-email){
   color: blue;
 }
 
@@ -315,15 +339,15 @@ span#tracking-form{
 }
 
 #tracking-form .testbox {
-  display: flex;
-  justify-content: left;
+  display: inline-block;
+  justify-content: center;
   align-items: center;
   height: inherit;
   padding: 30px;
 }
 
  form#tracking-form {
-  width: 40%;
+  width: 70%;
   padding: 20px;
   background: #fff;
   box-shadow: 0 2px 5px #ccc; 

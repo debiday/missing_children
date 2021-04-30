@@ -22,9 +22,8 @@ function showBioResult(evt) {
                           "city": response.city,
                           "county": response.county,
                           "state": response.state
-                        //   "search_terms": 
                         }
-// TODO: Add Search terms to invisible data 
+
         let all_info = `Name: ${child_info.fname} ${child_info.lname}\n`+ 
                         `Date Missing: ${child_info.date_missing}\n`+
                         `Age Missing: ${child_info.missing_age}\n`+

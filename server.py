@@ -8,11 +8,6 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
 # <!--------------------------------------------------------------->
 # <-- Routes for homepage -->
 # <!--------------------------------------------------------------->
@@ -166,8 +161,6 @@ def search():
       query_terms[term] = session['search_query'][term]
 
   db_matches = crud.search_db(query_terms=query_terms)
-  print("*******")
-  print(type(db_matches))
 
   return jsonify(db_matches)
 
@@ -210,7 +203,8 @@ def save_tracking():
 
 
   new_tracking = crud.create_tracking(user_id, child_id, note, date_time)
-  # flash('Your notes have been saved! Please visit account page.')
+  if new_tracking:
+    flash("Your notes have been saved in your saved searches.")
 
   return redirect('/tracking-page')
 
