@@ -24,7 +24,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 ![Front-page](https://github.com/Debiday/The_Lost_Children/blob/master/static/images/front-page.gif)
 
 
@@ -35,6 +34,8 @@ The data is supplemented with geolocation data converted by [Geocodio](https://w
 Information from the [NCMEC](https://www.missingkids.org/footer/media/keyfacts#:~:text=According%20to%20the%20FBI%2C%20in,represents%20reports%20of%20missing%20children.) is used to supplement the information on both the map and graph by showing categories of children who are missing. 
 
 To sign up as a web sleuth, users log into the app with their email and password. Users are then able to perform advanced searches through the database. Search result data is retrieved from the backend asynchronously with AJAX. With the generated results, users are able to securely add notes, save, update and delete their searches with sessions.
+
+<img src = “https://github.com/Debiday/The_Lost_Children/blob/master/static/images/tracking-page.gif” width = 500>
 
 ### Built With
 
