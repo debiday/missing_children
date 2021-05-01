@@ -69,13 +69,13 @@ Front-end
 Working map showing first names of missing children mapped to state and city. 
 
 ### 1.0 (Current)
-Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. Additional visualization with graphs and figures.
+Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. A number of visualizations with graphs and figures.
 
-### 2.0
-Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) newletter and verified links to donation portals from relevant organisations. 
+### 2.0 (Current)
+Buttons for subscribing to [Missing Children's Network](https://www.missingchildrensnetwork.ngo/) and volunteering opportunities. A search bar for users to search for entries based on state and city. An account page to store user's saved searches and notes.
 
 ### 3.0
-A search bar for users to search for entries based on state and city.
+A community forum for web sleuths to compare notes, web scraping to get latest cases to the database, and secure login features. 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
