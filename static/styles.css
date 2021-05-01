@@ -454,7 +454,10 @@ span:not(#user-email){
 /* Account page styling */
 /*---------------------------------------------------------------*/
 
-
+#my-account-table {
+  color: white;
+  background-color: white;
+}
 
 
 /*---------------------------------------------------------------*/
