@@ -310,21 +310,22 @@ body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, 
   background-image: url("/static/images/mg.png");
   background-repeat: no-repeat;
   background-position: 80% 30%;
-  border-radius: 30px;
+  border-radius: 28px;
   padding-left: 20%;
   padding-right: 30%;
-  margin: 2000;
   outline: none;
   font-family: Poppins, Arial, sans-serif;
   font-size: 17px;
   color: #666;
   line-height: 22px;
+  padding-bottom: 7vh;
 }
 
 #tracking-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 }
 
 #tracking-top-button {
@@ -337,7 +338,7 @@ body#tracking-form, div#tracking-form, form#tracking-form, input#tracking-form, 
     -moz-border-radius: 5px; 
     border-radius: 5px; 
     background-color: #095484;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
     cursor: pointer;
 }
@@ -424,6 +425,7 @@ span:not(#user-email){
 }
 
 #tracking-form button {
+  font-size: 20px;
   font-weight: bold;
   width: auto;
   padding: 10px;
@@ -453,10 +455,79 @@ span:not(#user-email){
 /*---------------------------------------------------------------*/
 /* Account page styling */
 /*---------------------------------------------------------------*/
+#my-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+#account-footer-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+#account-footer-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  padding-bottom: 10vh;
+}
+
+
+#account-tracking-buttons-1{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px;
+  width: auto;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #095484;
+  color: #fff;
+  cursor: pointer;
+}
+
+#account-tracking-buttons-2{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px;
+  width: auto;
+  padding: 10px;
+  border: none;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  background-color: #095484;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table {
+  color: black;
+}
+
+thead {
+  font-size: 18px;
+}
+
+.table-header {
+  text-align: center;
+  color: red;
+  padding-bottom: 8px;
+}
 
 #my-account-table {
   color: white;
-  background-color: white;
+  background-color: rgba(265, 265, 265,  0.8);
+  border-style: double;
+  border-radius: 40px;
+  border-color: whitesmoke;
 }
 
 

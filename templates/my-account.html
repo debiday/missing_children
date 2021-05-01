@@ -5,21 +5,23 @@
 {% block content %}
 
   <body>
-    <div class="container-fluid">
+    <div id="my-account" class="container-fluid">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-12">
+            <div id="tracking-buttons">
+            <form action="/logout" method="get" >
+                <button type="submit" id="account-tracking-buttons-1">Log Out/ Home</button>
+                </form>
+                <form action="/tracking-page" method="get" >
+                    <button type="submit" id="account-tracking-buttons-2">Back to tracking page</button>
+                    </form>
+                </div>
 			<div id="my-account-table" class="jumbotron">
-				<form action="/logout" method="get" >
-					<button type="submit" >Log Out</button>
-					</form>
-					<form action="/tracking-page" method="get" >
-						<button type="submit" >Back to tracking page</button>
-						</form>
 				<table class="table">
 					<thead>
-						<div class="header"><h1>Missing Children Notes</h1></div>
+                        <div class="table-header" ><h1><b>My Notes 📝</b></h1></div>
 						<tr>
-							<tr>
+							<tr style="font-size-adjust: 22;">
 								<th id="tracking_id">Tracking ID</th>
 								<th id="date_time">Date</th>
 								<th id="notes" width="400">Notes</th>
@@ -47,9 +49,13 @@
 					</tbody>
 				</table>
 			</div>
-            <p>Thank you for supporting the beta version of The Lost Children</p>
-            <p>You might also want to join the active <a href="https://www.websleuths.com/forums/forums/missing-persons-discussion.60/">Websleuths</a>community.</p>
+            <div id="account-footer-1">
+            <p><b>Thank you for supporting the beta version of The Lost Children.</b></p>
+            </div>
+            <div id="account-footer-2">
+            <p><b>You might also want to join an active <a href="https://www.websleuths.com/forums/forums/missing-persons-discussion.60/">Websleuths </a>community.</b></p>
 		</div>
+    </div>
 	</div>
 </div>
 </body>
