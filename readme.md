@@ -25,6 +25,8 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Front-page](https://github.com/Debiday/The_Lost_Children/blob/master/static/images/front-page.gif)
+
 
 This project visualizes the record of children who went missing when they were 18 years or younger from 2007 to 2021. The data is generated from the [NAMUS-National Missing and Unidentified Persons System](https://www.namus.gov/) with the search criteria set to search for historical records of all missing children in the US including all 52 states. 
 
