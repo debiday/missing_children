@@ -165,6 +165,7 @@ h1 {
 #background-age {
   background-image: url("/static/images/background.png");
   /* background-repeat: no-repeat; */
+  background-position: center;
 }
 
 #children-age {
@@ -529,6 +530,7 @@ thead {
   border-radius: 40px;
   border-color: whitesmoke;
 }
+
 
 
 /*---------------------------------------------------------------*/
