@@ -38,6 +38,7 @@ Information from the [NCMEC](https://www.missingkids.org/footer/media/keyfacts#:
 To sign up as a web sleuth, users log into the app with their email and password. Users are then able to perform advanced searches through the database. Search result data is retrieved from the backend asynchronously with AJAX. With the generated results, users are able to securely add notes, save, update and delete their searches with sessions.
 
 ![Tracking-page](https://github.com/Debiday/The_Lost_Children/blob/master/static/images/tracking-page.gif)
+![Tracking-page](https://github.com/Debiday/The_Lost_Children/blob/master/static/images/account-page.gif)
 
 ### Built With
 
