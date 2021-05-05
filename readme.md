@@ -69,7 +69,7 @@ Front-end
 ### MVP
 Working map showing first names of missing children mapped to state and city. 
 
-### 1.0 (Current)
+### 1.0
 Increasing awareness by providing input form for users to generate a list of missing children who are currently at their age. A number of visualizations with graphs and figures.
 
 ### 2.0 (Current)
