@@ -2,9 +2,6 @@
 """CREATE. READ. UPDATE. DELETE"""
 
 
-"""Making it easier to access data from DB?"""
-
-
 from model import db, Child, Location, User, Tracking, connect_to_db
 from datetime import datetime
 
@@ -38,15 +35,6 @@ def create_location(child_id, state, city, county):
 
     return new_location 
 
-# TODO: Create an update notes function?
-def update_note(note):
-
-    new_note = Users(child_id=child_id, state=state, city=city, county=county)
-
-    db.session.add(new_note)
-    db.session.commit()
-
-    return new_location      
 
 # <--------------------------------------------------------------->
 # <Children and Location Queries>
