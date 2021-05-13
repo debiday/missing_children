@@ -214,7 +214,7 @@ def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
 
-# TODO: Fix get user id by email, join tracking table(fixed)
+
 def get_user_id_by_email(email):
     """Return a user id by email."""
 
