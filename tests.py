@@ -1,5 +1,6 @@
 import crud
 import os
+import unittest
 from flask import session
 from server import app
 from unittest import TestCase
@@ -16,7 +17,7 @@ class FlaskIntegrationTestCase(TestCase):
     """Testing flask server"""
 
     def test_index(self):
-        client = server.app.test_client()
+        client = app.test_client()
         result = client.get('/')
         self.assertIn(b"<div id='map'></div>", result.data)
     
@@ -45,7 +46,6 @@ class FlaskTestsLoggedIn(TestCase):
 
 if __name__ == "__main__":
     #if called like a script, run our tests
-    import unittest
 
     os.system('dropdb testdb')
     os.system('createdb testdb')
