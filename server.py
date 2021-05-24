@@ -17,12 +17,6 @@ def show_homepage():
 
     return render_template("homepage.html")
 
-@app.route('/about')
-def show_about():
-    """Show the about page."""
-
-    return render_template("about.html")
-
 
 @app.route('/age')
 def same_age():
