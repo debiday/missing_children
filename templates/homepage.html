@@ -1,6 +1,98 @@
 <head>
   <link rel="shortcut icon" href="/static/images/favicon.ico">
 </head>
+<!--------------------------------------------------------------->
+<!-- Loader -->
+<!--------------------------------------------------------------->
+<style>
+
+	/* Center the loader */
+	#loader {
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  z-index: 9999;
+	  width: 120px;
+	  height: 120px;
+	  margin: -76px 0 0 -76px;
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #47A8BD;
+	  -webkit-animation: spin 2s linear infinite;
+	  animation: spin 2s linear infinite;
+	  background: rgba(0, 0, 0, .65) url('http://fc02.deviantart.net/fs71/i/2011/274/6/f/ocean__sky__stars__and_you_by_muddymelly-d4bg1ub.png');
+	  background-blend-mode: darken;
+	}
+
+	
+	
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+	
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	
+	/* Add animation to "page content" */
+	.animate-bottom {
+	  position: relative;
+	  -webkit-animation-name: animatebottom;
+	  -webkit-animation-duration: 1s;
+	  animation-name: animatebottom;
+	  animation-duration: 1s
+	}
+	
+	@-webkit-keyframes animatebottom {
+	  from { bottom:-100px; opacity:0 } 
+	  to { bottom:0px; opacity:1 }
+	}
+	
+	@keyframes animatebottom { 
+	  from{ bottom:-100px; opacity:0 } 
+	  to{ bottom:0; opacity:1 }
+	}
+	
+	#myDiv {
+	  display: none;
+	  text-align: center;
+	}
+
+	#overlay {
+		position: fixed;
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 2;
+		cursor: pointer;
+	}
+
+	</style>
+<body onload="myFunction()" style="margin:0;"></body>
+<div id="overlay"><div id="loader"></div></div>
+<script>
+	var myVar;
+	
+	function myFunction() {
+	  myVar = setTimeout(showPage, 2000);
+	}
+	
+	function showPage() {
+	  document.getElementById("loader").style.display = "none";
+	  document.getElementById("overlay").style.display = "none";
+	}
+	</script>
+
+
+
+<!--------------------------------------------------------------->
 <body>
 <div id="topnav" class="topnav">
   <a class="active" href="#home"><b>Home</b></a>
@@ -34,7 +126,7 @@
 				<div class="col-md-12" style="text-align: center;">
 				<p><h5>Made by Deborah Ong, in May 2021.</p>
 				<p>Here's a <span><a href="https://www.youtube.com/watch?v=wWRveUQW8Ks&ab_channel=DeborahOng" style="all: revert">video</a></span> of how the project was made with the <span><a href="https://github.com/Debiday/The_Lost_Children" style="all: revert">codebase and data</a></span>.</p>
-				<p>You can also contact me via <span><a href="https://www.linkedin.com/in/debiday/" style="all: revert">LinkedIn</a></span></h5><h2>🐇 </h2></p></div>
+				<p>You can also contact me via <span><a href="https://www.linkedin.com/in/debiday/" style="all: revert">LinkedIn</a></span></h5><h2>🐇</h2></p></div>
 				</div>
 			</div>
 		</div>
