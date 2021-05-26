@@ -1,7 +1,7 @@
 """Models for children database"""
 
 from flask_sqlalchemy import SQLAlchemy
-from flask import get_flashed_messages
+from flask import flask, get_flashed_messages
 from sqlalchemy import desc
 from datetime import datetime
 db = SQLAlchemy()
@@ -24,7 +24,7 @@ class Child(db.Model):
     def __repr__(self):
         """Provide helpful representation when printed."""
 
-        return f"<Child name={self.fname} {self.lname} missing_age={self.missing_age} >"
+        return f"<Child name={self.fname} {self.lname} missing_age={self.missing_age}>"
 
 
 class Location(db.Model):
