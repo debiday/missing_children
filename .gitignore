@@ -3,4 +3,4 @@ __pycache__
 env/
 .DS_Store
 secrets.sh
-tlc/nginx.conf
+nginx.conf
