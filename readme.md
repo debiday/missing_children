@@ -18,7 +18,8 @@
     <a href="http://lostchildren.deborahong.com/">The Site</a>
     ·
     <a href="https://debiday.wordpress.com">Process Blog</a>
-    To skip registration, use user: ####user@user.com and password: ####password.
+    <br />
+    To skip registration, use user: <u>user@user.com</u> and password: <u>password</u>.
   </p>
 </p>
 
