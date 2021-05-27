@@ -15,11 +15,10 @@
     <br />
     <a href="https://youtu.be/wWRveUQW8Ks">Youtube Walkthrough</a>
     ·
-    <a href="https://github.com/debiday/The_Lost_Children/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/debiday/The_Lost_Children/issues">Request Feature</a>
+    <a href="http://lostchildren.deborahong.com/">The Site</a>
     ·
     <a href="https://debiday.wordpress.com">Process Blog</a>
+    To skip registration, use user: ####user@user.com and password: ####password.
   </p>
 </p>
 
