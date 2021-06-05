@@ -13,7 +13,7 @@
     <br />
     <br />
     <br />
-    <a href="https://youtu.be/wWRveUQW8Ks">Youtube Walkthrough</a>
+    <a href="https://youtu.be/wWRveUQW8Ks">Youtube Demo</a>
     ·
     <a href="http://lostchildren.deborahong.com/">The Site</a>
     ·
